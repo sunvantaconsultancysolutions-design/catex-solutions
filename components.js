@@ -70,7 +70,7 @@
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="tel:+919248042011" class="cta-phone"><i class="fas fa-phone"></i> +91-9248042011 / +91-9248042012</a>
+        <a href="tel:+919248042011" class="cta-phone"><i class="fas fa-phone"></i> +91-9248042011</a>
         <a href="index.html#enquiry-form" class="btn btn-primary">Get Started</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Menu">
