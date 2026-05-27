@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pvt. Ltd. ROC Compliance AMC | Captex Company</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    body{
+      padding-top:72px;
+      background:#F8FAFC;
+      font-family:'Inter',sans-serif;
+    }
+
+    /* HERO */
+    .page-hero{
+      background:linear-gradient(135deg,#0F172A 0%,#1E1B4B 60%,#0F172A 100%);
+      padding:60px 0 40px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .page-hero::before{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      top:-200px;
+      right:-100px;
+      opacity:.12;
+      filter:blur(60px);
+      background:#4F46E5;
+    }
+
+    .hero-inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 24px;
+      display:grid;
+      grid-template-columns:1fr 400px;
+      gap:48px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .page-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.2);
+      color:white;
+      padding:6px 16px;
+      border-radius:100px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:20px;
+    }
+
+    .hero-left h1{
+      font-size:clamp(2rem,4vw,3rem);
+      color:white;
+      margin-bottom:16px;
+      line-height:1.15;
+      font-family:'Outfit',sans-serif;
+      font-weight:800;
+    }
+
+    .hero-left p{
+      font-size:1.05rem;
+      color:rgba(255,255,255,.72);
+      margin-bottom:28px;
+      line-height:1.7;
+      max-width:580px;
+    }
+
+    .price-display{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      margin-bottom:28px;
+      flex-wrap:wrap;
+    }
+
+    .price-display .at,
+    .price-display .per{
+      color:rgba(255,255,255,.5);
+      font-size:14px;
+    }
+
+    .price-display .amt{
+      font-family:'Outfit',sans-serif;
+      font-size:2.8rem;
+      font-weight:800;
+      color:#818CF8;
+    }
+
+    /* FORM */
+    .hero-form{
+      background:white;
+      border-radius:20px;
+      padding:32px 28px;
+      box-shadow:0 25px 50px rgba(0,0,0,.3);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-form::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:4px;
+      background:linear-gradient(135deg,#4F46E5,#6366F1);
+    }
+
+    .hero-form h3{
+      font-size:1.4rem;
+      color:#0F172A;
+      margin-bottom:6px;
+      font-family:'Outfit',sans-serif;
+    }
+
+    .hero-form>.sub{
+      font-size:13px;
+      color:#64748B;
+      margin-bottom:24px;
+    }
+
+    .fg{
+      margin-bottom:14px;
+    }
+
+    .fg label{
+      display:block;
+      font-size:12.5px;
+      font-weight:600;
+      color:#334155;
+      margin-bottom:5px;
+    }
+
+    .fg .ii{
+      position:relative;
+    }
+
+    .fg .ii i{
+      position:absolute;
+      left:13px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#94A3B8;
+      font-size:13px;
+    }
+
+    .fg input{
+      width:100%;
+      padding:11px 13px 11px 38px;
+      border:1.5px solid #E2E8F0;
+      border-radius:10px;
+      font-size:13.5px;
+      outline:none;
+      transition:.2s;
+      background:#F8FAFC;
+    }
+
+    .fg input:focus{
+      border-color:#4F46E5;
+      background:white;
+      box-shadow:0 0 0 3px rgba(79,70,229,.12);
+    }
+
+    .submit-btn{
+      width:100%;
+      padding:14px;
+      color:white;
+      border:none;
+      border-radius:10px;
+      font-size:15px;
+      font-weight:700;
+      cursor:pointer;
+      margin-top:8px;
+      font-family:'Outfit',sans-serif;
+      transition:.3s;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:linear-gradient(135deg,#4F46E5,#4338CA);
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .form-ok{
+      display:none;
+      text-align:center;
+      padding:14px;
+      background:rgba(16,185,129,.1);
+      border:1px solid rgba(16,185,129,.2);
+      border-radius:10px;
+      color:#059669;
+      margin-top:12px;
+      font-size:14px;
+    }
+
+    /* FEATURES */
+    .features-section{
+      max-width:1100px;
+      margin:56px auto;
+      padding:0 24px;
+    }
+
+    .features-section h2{
+      font-size:1.9rem;
+      font-weight:800;
+      color:#0F172A;
+      margin-bottom:14px;
+      text-align:center;
+      font-family:'Outfit',sans-serif;
+    }
+
+    .features-sub{
+      text-align:center;
+      color:#64748B;
+      margin-bottom:42px;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+    }
+
+    .feature-card{
+      background:#fff;
+      border:1.5px solid #E2E8F0;
+      border-radius:16px;
+      padding:24px 20px;
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      transition:.25s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-4px);
+      border-color:#4F46E5;
+      box-shadow:0 10px 30px rgba(79,70,229,.1);
+    }
+
+    .feature-icon{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#4F46E5,#6366F1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+    }
+
+    .feature-icon i{
+      color:#fff;
+      font-size:16px;
+    }
+
+    .feature-content h3{
+      font-size:15px;
+      font-weight:700;
+      color:#0F172A;
+      margin-bottom:6px;
+    }
+
+    .feature-content p{
+      font-size:13px;
+      color:#64748B;
+      line-height:1.6;
+    }
+
+    /* FAQ */
+    .faq-section{
+      max-width:800px;
+      margin:0 auto 64px;
+      padding:0 24px;
+    }
+
+    .faq-section h2{
+      font-size:1.8rem;
+      font-weight:800;
+      color:#0F172A;
+      margin-bottom:12px;
+      text-align:center;
+      font-family:'Outfit',sans-serif;
+    }
+
+    .faq-sub{
+      text-align:center;
+      color:#64748B;
+      margin-bottom:36px;
+    }
+
+    .faq-item{
+      border:1.5px solid #E2E8F0;
+      border-radius:14px;
+      margin-bottom:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+
+    .faq-q{
+      width:100%;
+      background:none;
+      border:none;
+      text-align:left;
+      padding:18px 20px;
+      font-size:15px;
+      font-weight:600;
+      color:#1E293B;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-family:'Inter',sans-serif;
+    }
+
+    .faq-q i{
+      transition:transform .3s;
+      color:#4F46E5;
+      flex-shrink:0;
+      margin-left:12px;
+    }
+
+    .faq-item.active .faq-q i{
+      transform:rotate(180deg);
+    }
+
+    .faq-a{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease,padding .3s ease;
+      font-size:14px;
+      color:#475569;
+      line-height:1.7;
+      padding:0 20px;
+    }
+
+    .faq-item.active .faq-a{
+      max-height:300px;
+      padding:0 20px 18px;
+    }
+
+    @media(max-width:900px){
+      .hero-inner{
+        grid-template-columns:1fr;
+      }
+
+      .hero-form{
+        max-width:480px;
+        margin:0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <div class="page-tag">
+        <i class="fas fa-file-alt"></i>
+        Annual Compliance
+      </div>
+
+      <h1>Pvt. Ltd. ROC Compliance AMC</h1>
+
+      <p>
+        Complete annual ROC compliance management for your Private Limited Company.
+        Stay penalty-free with dedicated legal support and timely MCA filings.
+      </p>
+
+      <div class="price-display">
+        <span class="at">Starting at</span>
+        <span class="amt">₹1,499</span>
+        <span class="per">/ month</span>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="hero-form">
+
+      <h3>Get Free Consultation</h3>
+      <p class="sub">Our expert will call you within 30 minutes</p>
+
+      <form id="rocForm">
+
+        <div class="fg">
+          <label>Full Name *</label>
+          <div class="ii">
+            <i class="fas fa-user"></i>
+            <input type="text" id="roc-name" placeholder="Your full name" required/>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Email *</label>
+          <div class="ii">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="roc-email" placeholder="Your email address" required/>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Mobile Number *</label>
+          <div class="ii">
+            <i class="fas fa-phone"></i>
+            <input type="tel" id="roc-phone" placeholder="10-digit mobile number" required/>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>City</label>
+          <div class="ii">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" id="roc-city" placeholder="Your city"/>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="roc-btn">
+          <i class="fas fa-paper-plane"></i>
+          Get Started Now
+        </button>
+
+        <div class="form-ok" id="roc-ok">
+          <i class="fas fa-check-circle"></i>
+          Thank you! Our expert will contact you shortly.
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+
+  <h2>What's Included in the AMC</h2>
+  <p class="features-sub">
+    Comprehensive ROC compliance coverage for your Private Limited Company
+  </p>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-file-signature"></i>
+      </div>
+      <div class="feature-content">
+        <h3>MGT-7 Annual Return Filing</h3>
+        <p>Preparation and filing of annual return with MCA within statutory timelines.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <div class="feature-content">
+        <h3>AOC-4 Financial Filing</h3>
+        <p>Filing audited financial statements including balance sheet and P&L.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="feature-content">
+        <h3>Board Meeting Assistance</h3>
+        <p>Drafting board notices, agendas and minutes for statutory compliance.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-id-card"></i>
+      </div>
+      <div class="feature-content">
+        <h3>DIR-3 KYC Filing</h3>
+        <p>Annual director KYC filing to avoid DIN deactivation and penalties.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-hand-holding-usd"></i>
+      </div>
+      <div class="feature-content">
+        <h3>DPT-3 Filing</h3>
+        <p>Mandatory filing for loans and deposits received by the company.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-user-tie"></i>
+      </div>
+      <div class="feature-content">
+        <h3>Dedicated Legal Manager</h3>
+        <p>Expert legal manager for ongoing compliance support and guidance.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+
+  <h2>Frequently Asked Questions</h2>
+
+  <p class="faq-sub">
+    Everything you need to know about ROC Compliance AMC
+  </p>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFAQ(this)">
+      What is included in the AMC?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <div class="faq-a">
+      MGT-7 Annual Return, AOC-4 Financial Statements, board meeting assistance, DIR-3 KYC and dedicated legal manager support.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFAQ(this)">
+      What is the penalty for non-compliance?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <div class="faq-a">
+      ₹200 per day per form for delayed filing plus possible director disqualification and company strike-off.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFAQ(this)">
+      When are annual returns due?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <div class="faq-a">
+      MGT-7 must be filed within 60 days of AGM and AOC-4 within 30 days of AGM.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFAQ(this)">
+      Do I get a dedicated manager?
+      <i class="fas fa-chevron-down"></i>
+    </button>
+
+    <div class="faq-a">
+      Yes, every AMC customer gets a dedicated legal manager for reminders, filings and compliance support.
+    </div>
+  </div>
+
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="components.js"></script>
+
+<script>
+  function toggleFAQ(el){
+    const item = el.parentElement;
+    const isActive = item.classList.contains('active');
+
+    document.querySelectorAll('.faq-item')
+      .forEach(i => i.classList.remove('active'));
+
+    if(!isActive){
+      item.classList.add('active');
+    }
+  }
+
+  document.getElementById('rocForm').addEventListener('submit', async(e)=>{
+    e.preventDefault();
+
+    const btn = document.getElementById('roc-btn');
+
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+    btn.disabled = true;
+
+    const data = {
+      fullName: document.getElementById('roc-name').value.trim(),
+      email: document.getElementById('roc-email').value.trim(),
+      phone: document.getElementById('roc-phone').value.trim(),
+      city: document.getElementById('roc-city').value.trim(),
+      service: 'ROC Compliance AMC',
+      timestamp: new Date().toISOString()
+    };
+
+    try{
+      await fetch('/api/enquiry',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(data)
+      });
+    }catch(err){}
+
+    document.getElementById('roc-ok').style.display='block';
+    document.getElementById('rocForm').reset();
+
+    btn.innerHTML='<i class="fas fa-paper-plane"></i> Get Started Now';
+    btn.disabled=false;
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DIR-3 DIN KYC Filing | Catax Solutions Private Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body{padding-top:72px;}
+    .page-hero{background:linear-gradient(135deg,#0F172A 0%,#1E1B4B 60%,#0F172A 100%);padding:60px 0 40px;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;top:-200px;right:-100px;opacity:.12;filter:blur(60px);}
+    .hero-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 400px;gap:48px;align-items:center;position:relative;z-index:1;}
+    .page-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:20px;}
+    .hero-left h1{font-size:clamp(1.8rem,4vw,2.8rem);color:white;margin-bottom:16px;line-height:1.15;}
+    .hero-left p{font-size:1.05rem;color:rgba(255,255,255,.7);margin-bottom:28px;line-height:1.7;}
+    .price-display{display:flex;align-items:baseline;gap:8px;margin-bottom:28px;}
+    .price-display .at,.price-display .per{color:rgba(255,255,255,.5);font-size:14px;}
+    .price-display .amt{font-family:Outfit,sans-serif;font-size:2.8rem;font-weight:800;color:#F59E0B;}
+    .hero-form{background:white;border-radius:20px;padding:32px 28px;box-shadow:0 25px 50px rgba(0,0,0,.3);position:relative;overflow:hidden;}
+    .hero-form::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+    .hero-form h3{font-size:1.4rem;color:var(--dark);margin-bottom:6px;}
+    .hero-form>.sub{font-size:13px;color:var(--gray-500);margin-bottom:24px;}
+    .fg{margin-bottom:14px;}
+    .fg label{display:block;font-size:12.5px;font-weight:600;color:var(--gray-700);margin-bottom:5px;}
+    .fg .ii{position:relative;}
+    .fg .ii i{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-size:13px;}
+    .fg input{width:100%;padding:11px 13px 11px 38px;border:1.5px solid var(--gray-200);border-radius:10px;font-size:13.5px;outline:none;transition:all .2s;font-family:Inter,sans-serif;background:var(--gray-50);}
+    .fg input:focus{border-color:#4F46E5;background:white;box-shadow:0 0 0 3px rgba(79,70,229,.12);}
+    .submit-btn{width:100%;padding:14px;color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;margin-top:8px;font-family:Outfit,sans-serif;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px;}
+    .submit-btn:hover{transform:translateY(-2px);}
+    .form-ok{display:none;text-align:center;padding:14px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);border-radius:10px;color:#059669;margin-top:12px;font-size:14px;}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero-form{max-width:480px;margin:0 auto;}}
+
+    /* Features Section */
+    .features-section{max-width:1100px;margin:56px auto;padding:0 24px;}
+    .features-section h2{font-size:1.7rem;font-weight:800;color:var(--dark,#0F172A);margin-bottom:32px;text-align:center;}
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+    .feature-card{background:#fff;border:1.5px solid #E2E8F0;border-radius:14px;padding:24px 20px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+    .feature-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#06B6D4,#0EA5E9);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .feature-icon i{color:#fff;font-size:16px;}
+    .feature-card p{font-size:14px;font-weight:600;color:#1E293B;margin:0;line-height:1.4;}
+
+    /* FAQ Section */
+    .faq-section{max-width:800px;margin:0 auto 64px;padding:0 24px;}
+    .faq-section h2{font-size:1.7rem;font-weight:800;color:var(--dark,#0F172A);margin-bottom:32px;text-align:center;}
+    .faq-item{border:1.5px solid #E2E8F0;border-radius:12px;margin-bottom:12px;overflow:hidden;}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:15px;font-weight:600;color:#1E293B;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:Inter,sans-serif;}
+    .faq-q i{transition:transform .3s;color:#06B6D4;flex-shrink:0;margin-left:12px;}
+    .faq-item.active .faq-q i{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:14px;color:#475569;line-height:1.7;padding:0 20px;}
+    .faq-item.active .faq-a{max-height:300px;padding:0 20px 18px;}
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="page-tag"><i class="fas fa-id-card"></i> Annual KYC</div>
+        <h1>DIR-3 DIN KYC Filing</h1>
+        <p>Mandatory annual KYC for every Director holding a DIN in India — filed in 1 business day.</p>
+        <div class="price-display">
+          <span class="at">Just</span>
+          <span class="amt">₹999</span>
+          <span class="per">all inclusive</span>
+        </div>
+      </div>
+      <div class="hero-form">
+        <h3>Get Free Consultation</h3>
+        <p class="sub">Our expert will call you within 30 minutes</p>
+        <form id="pageForm">
+          <div class="fg"><label>Full Name *</label><div class="ii"><i class="fas fa-user"></i><input type="text" id="pf-name" placeholder="Your full name" required/></div></div>
+          <div class="fg"><label>Email *</label><div class="ii"><i class="fas fa-envelope"></i><input type="email" id="pf-email" placeholder="Your email address" required/></div></div>
+          <div class="fg"><label>Mobile Number *</label><div class="ii"><i class="fas fa-phone"></i><input type="tel" id="pf-phone" placeholder="10-digit mobile number" required/></div></div>
+          <div class="fg"><label>City</label><div class="ii"><i class="fas fa-map-marker-alt"></i><input type="text" id="pf-city" placeholder="Your city"/></div></div>
+          <button type="submit" class="submit-btn" id="pf-btn" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);"><i class="fas fa-paper-plane"></i> Get Started Now</button>
+          <div class="form-ok" id="pf-ok"><i class="fas fa-check-circle"></i> Thank you! Our expert will contact you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section">
+    <h2>What's Included in DIR-3 KYC Filing</h2>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-globe"></i></div><p>DIR-3 KYC Web Filing</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><p>OTP-based Authentication</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-signature"></i></div><p>Digital Signature Application</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-receipt"></i></div><p>Filing Confirmation Receipt</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><p>Due Date Monitoring</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-bolt"></i></div><p>Quick 1-Day Filing</p></div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">Who must file DIR-3 KYC?<i class="fas fa-chevron-down"></i></button>
+      <div class="faq-a">Every person who has been allotted a DIN must file DIR-3 KYC each year, whether or not they are currently an active director.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">What is the due date?<i class="fas fa-chevron-down"></i></button>
+      <div class="faq-a">DIR-3 KYC must be filed by 30th September of every financial year.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">What is the penalty for missing the deadline?<i class="fas fa-chevron-down"></i></button>
+      <div class="faq-a">The DIN gets deactivated, and a ₹5,000 fee must be paid to reactivate it. Filing after the deadline incurs the penalty automatically.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">What documents are needed?<i class="fas fa-chevron-down"></i></button>
+      <div class="faq-a">Aadhaar card, PAN card, personal mobile number (for OTP), and personal email ID are required for DIR-3 KYC filing.</div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+  <script>
+    function toggleFAQ(el){const item=el.parentElement;const isActive=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));if(!isActive)item.classList.add('active');}
+    document.getElementById('pageForm').addEventListener('submit',async(e)=>{e.preventDefault();const btn=document.getElementById('pf-btn');btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Submitting...';btn.disabled=true;const data={fullName:document.getElementById('pf-name').value.trim(),email:document.getElementById('pf-email').value.trim(),phone:document.getElementById('pf-phone').value.trim(),city:document.getElementById('pf-city').value.trim(),service:'DIR-3 DIN KYC Filing',timestamp:new Date().toISOString()};try{await fetch('/api/enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});}catch{}document.getElementById('pf-ok').style.display='block';document.getElementById('pageForm').reset();btn.innerHTML='<i class="fas fa-paper-plane"></i> Get Started Now';btn.disabled=false;});
+  </script>
+</body>
+</html>

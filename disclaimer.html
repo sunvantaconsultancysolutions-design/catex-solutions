@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer | Catax Solutions Private Limited</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #1e293b;
+      padding-top: 72px;
+    }
+
+    /* ── Hero ── */
+    .disclaimer-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1a2744 100%);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .disclaimer-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 120%, rgba(99,102,241,.18), transparent);
+    }
+    .disclaimer-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99,102,241,.15);
+      border: 1px solid rgba(99,102,241,.3);
+      color: #a5b4fc;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .disclaimer-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 16px;
+    }
+    .disclaimer-hero p {
+      color: #94a3b8;
+      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .disclaimer-hero .last-updated {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* ── Content wrapper ── */
+    .disclaimer-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* ── Section cards ── */
+    .disc-section {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      position: relative;
+      transition: box-shadow .2s;
+    }
+    .disc-section:hover { box-shadow: 0 6px 24px rgba(0,0,0,.07); }
+
+    .disc-section .section-number {
+      position: absolute;
+      top: -14px;
+      left: 28px;
+      background: #6366f1;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 100px;
+      letter-spacing: .5px;
+    }
+
+    .disc-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .disc-section h2 i {
+      color: #6366f1;
+      font-size: 1rem;
+    }
+
+    .disc-section p {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .disc-section ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    .disc-section ul li {
+      color: #475569;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      padding: 4px 0 4px 22px;
+      position: relative;
+    }
+    .disc-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #6366f1;
+    }
+
+    /* ── Important notice box ── */
+    .important-notice {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 1px solid #f59e0b;
+      border-left: 4px solid #f59e0b;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .important-notice i {
+      color: #92400e;
+      font-size: 1.2rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .important-notice p {
+      color: #78350f;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    /* ── Contact CTA ── */
+    .contact-cta {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: 16px;
+      padding: 40px 36px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .contact-cta h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 10px;
+    }
+    .contact-cta p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+    .contact-cta a.btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #6366f1;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background .2s, transform .15s;
+    }
+    .contact-cta a.btn:hover { background: #4f46e5; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="disclaimer-hero">
+    <div class="badge"><i class="fa-solid fa-shield-halved"></i> Legal Notice</div>
+    <h1>Disclaimer</h1>
+    <p>Please read this disclaimer carefully before using the services or information provided by Catax Solutions Private Limited.</p>
+    <div class="last-updated"><i class="fa-regular fa-calendar"></i> Last Updated: May 2024</div>
+  </section>
+
+  <!-- Content -->
+  <div class="disclaimer-content">
+
+    <div class="important-notice">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <p>The information on this website is for general informational purposes only. It does not constitute legal, financial, or professional advice of any kind. Catax Solutions Private Limited is not a law firm, CA firm, CS firm, or registered trademark agent.</p>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="disc-section">
+      <span class="section-number">01</span>
+      <h2><i class="fa-solid fa-building-columns"></i> General Disclaimer</h2>
+      <p>Catax Solutions Private Limited is a <strong>private business consulting and compliance facilitation entity</strong>. We are not a law firm, chartered accountancy (CA) firm, company secretary (CS) firm, or a registered trademark agent. The services rendered by Catax Solutions Private Limited are facilitation, documentation assistance, and business process support services only.</p>
+      <ul>
+        <li>We do not practice law, provide legal opinions, or represent clients in any judicial or quasi-judicial proceedings.</li>
+        <li>We do not provide chartered accountancy services as defined under the Institute of Chartered Accountants of India (ICAI) Act.</li>
+        <li>Any reference to legal or compliance matters on this website is purely informational.</li>
+        <li>Users requiring formal legal advice are encouraged to consult a qualified advocate or legal professional.</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="disc-section">
+      <span class="section-number">02</span>
+      <h2><i class="fa-solid fa-handshake-slash"></i> No Professional Relationship</h2>
+      <p>The use of this website, browsing its content, or submitting inquiries does not create any attorney-client, CA-client, CS-client, or any other professional advisory relationship between the user and Catax Solutions Private Limited or any of its team members, affiliates, or associates.</p>
+      <p style="margin-top:12px;">Any engagement with Catax Solutions Private Limited for services is governed solely by the specific service agreement or terms accepted at the time of purchase. Visiting or using this website constitutes no such engagement.</p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="disc-section">
+      <span class="section-number">03</span>
+      <h2><i class="fa-solid fa-landmark-flag"></i> Government Liaison & Registrations</h2>
+      <p>Catax Solutions Private Limited facilitates the process of filing applications, preparing documentation, and liaising with relevant authorities on behalf of clients. However, it is important to note the following:</p>
+      <ul>
+        <li>All registrations, licenses, certificates, and approvals are issued <strong>solely by the respective Government authority or regulatory body</strong> of India.</li>
+        <li>Catax Solutions Private Limited does not guarantee the approval, grant, or issuance of any registration or license.</li>
+        <li>Government decisions are independent and at the discretion of the concerned authorities.</li>
+        <li>Catax Solutions Private Limited role is limited to assisting in the preparation and submission of applications in accordance with applicable laws and regulations.</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="disc-section">
+      <span class="section-number">04</span>
+      <h2><i class="fa-solid fa-circle-info"></i> Information Accuracy</h2>
+      <p>While Catax Solutions Private Limited strives to keep the information on this website accurate, complete, and up to date, we make no warranties or representations of any kind regarding the accuracy, reliability, completeness, or timeliness of any content.</p>
+      <ul>
+        <li>Laws, regulations, and government procedures change frequently. Information on this site may not reflect the most current legal or regulatory developments.</li>
+        <li>All content is provided for <strong>general informational purposes only</strong> and should not be relied upon as legal advice.</li>
+        <li>Readers should verify all information independently or consult a qualified professional before taking any action.</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="disc-section">
+      <span class="section-number">05</span>
+      <h2><i class="fa-solid fa-indian-rupee-sign"></i> Pricing Disclaimer</h2>
+      <p>All prices and fees displayed on this website represent <strong>professional service fees charged by Catax Solutions Private Limited</strong> for facilitation, documentation, and consultation services. These fees do not include:</p>
+      <ul>
+        <li>Government filing fees, stamp duty, court fees, or any other statutory charges payable to government authorities.</li>
+        <li>Third-party notarization, attestation, or translation charges, if applicable.</li>
+        <li>Any additional costs arising from specific requirements of individual cases.</li>
+      </ul>
+      <p style="margin-top:12px;">Government fees are subject to change at any time by the respective authority, and Catax Solutions Private Limited holds no responsibility for such changes. Final pricing details will be communicated before initiating services.</p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="disc-section">
+      <span class="section-number">06</span>
+      <h2><i class="fa-regular fa-clock"></i> Timelines & Processing</h2>
+      <p>Any timelines mentioned on the website or communicated by our team are <strong>estimates only</strong> and are subject to government processing times, workload, and other external factors beyond Catax Solutions Private Limited control.</p>
+      <ul>
+        <li>Catax Solutions Private Limited does not guarantee any specific turnaround time for government approvals, registrations, or certifications.</li>
+        <li>Delays caused by government backlogs, scrutiny notices, objections, or additional document requirements are outside our control.</li>
+        <li>Public holidays, elections, system downtimes, or policy changes may also affect timelines.</li>
+        <li>Catax Solutions Private Limited will make reasonable efforts to expedite processes wherever possible.</li>
+      </ul>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="contact-cta">
+      <h3>Have Questions or Concerns?</h3>
+      <p>If you have any questions regarding this disclaimer or wish to clarify the nature of our services, our team is here to help.</p>
+      <a href="mailto:info@captexcompany.com" class="btn"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+    </div>
+
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+</body>
+</html>

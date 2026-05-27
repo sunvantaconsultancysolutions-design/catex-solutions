@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Catax Solutions Private Limited</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding-top: 72px;
+    }
+
+    /* ── Hero ── */
+    .about-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #312e81 100%);
+      padding: 90px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99,102,241,.18);
+      border: 1px solid rgba(99,102,241,.35);
+      color: #a5b4fc;
+      font-family: 'Outfit', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+    .about-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .about-hero h1 span {
+      background: linear-gradient(90deg, #818cf8, #c4b5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      color: #cbd5e1;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: 13px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(99,102,241,.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(99,102,241,.5); }
+    .btn-outline {
+      background: transparent;
+      color: #e2e8f0;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: 13px 30px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(226,232,240,.3);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background .2s, border-color .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.08); border-color: rgba(226,232,240,.6); }
+
+    /* ── Stats ── */
+    .stats-section {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .stat-item {
+      padding: 38px 24px;
+      text-align: center;
+      border-right: 1px solid #f1f5f9;
+      position: relative;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item .stat-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 1.25rem;
+      color: #6366f1;
+    }
+    .stat-item .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-item .stat-number span { color: #6366f1; }
+    .stat-item .stat-label {
+      font-size: .85rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* ── Section Wrapper ── */
+    .section { padding: 80px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ede9fe;
+      color: #6366f1;
+      font-family: 'Outfit', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-title span { color: #6366f1; }
+    .section-lead {
+      font-size: 1.05rem;
+      color: #475569;
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    /* ── Mission ── */
+    .mission-section { background: #f8fafc; }
+    .mission-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .mission-visual {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+      border-radius: 20px;
+      padding: 48px 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .mission-visual::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(99,102,241,.3), transparent 70%);
+    }
+    .mission-visual .mv-icon {
+      width: 64px; height: 64px;
+      background: rgba(99,102,241,.2);
+      border: 1.5px solid rgba(99,102,241,.4);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      color: #a5b4fc;
+      margin-bottom: 24px;
+    }
+    .mission-visual h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .mission-visual p {
+      color: #94a3b8;
+      line-height: 1.7;
+      font-size: .98rem;
+      position: relative;
+      z-index: 1;
+    }
+    .mission-content .section-lead { max-width: 100%; }
+    .mission-content p + p { margin-top: 16px; }
+    .mission-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .pillar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .pillar-item .pi-icon {
+      width: 38px; height: 38px;
+      min-width: 38px;
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #6366f1;
+      font-size: 1rem;
+    }
+    .pillar-item .pi-text h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      color: #1e293b;
+      margin-bottom: 3px;
+    }
+    .pillar-item .pi-text p {
+      font-size: .83rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* ── Team ── */
+    .team-section { background: #fff; }
+    .team-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 52px;
+    }
+    .team-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .team-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.07); }
+    .team-card .tc-avatar {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.6rem;
+      color: #fff;
+    }
+    .team-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    .team-card .tc-role {
+      font-size: .8rem;
+      color: #6366f1;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .team-card p {
+      font-size: .82rem;
+      color: #64748b;
+      line-height: 1.55;
+    }
+
+    /* ── Why Choose Us ── */
+    .why-section { background: #f8fafc; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-top: 44px;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(99,102,241,.12);
+      border-color: #c7d2fe;
+    }
+    .why-card .wc-icon {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 1.5rem;
+      color: #6366f1;
+    }
+    .why-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+    .why-card p {
+      font-size: .85rem;
+      color: #64748b;
+      line-height: 1.65;
+    }
+
+    /* ── CTA Banner ── */
+    .cta-section {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #312e81 100%);
+      padding: 72px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(99,102,241,.2), transparent 70%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .cta-section p {
+      color: #94a3b8;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: #fff;
+      color: #4f46e5;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 13px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.15);
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.2); }
+    .btn-wa {
+      background: #22c55e;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: 13px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,197,94,.4); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid #f1f5f9; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .mission-layout, .team-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- ── Hero ── -->
+  <section class="about-hero">
+    <div class="badge"><i class="fa-solid fa-building-columns"></i> Est. 2008 · Trusted Nationwide</div>
+    <h1>About <span>Catax Solutions Private Limited</span></h1>
+    <p>Helping entrepreneurs focus on their dreams while we handle the legalities — making legal compliance simple, fast, and affordable for every Indian business.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary"><i class="fa-solid fa-phone"></i> Talk to an Expert</a>
+      <a href="reviews.html" class="btn-outline"><i class="fa-solid fa-star"></i> Read Our Reviews</a>
+    </div>
+  </section>
+
+  <!-- ── Stats ── -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <div class="stat-number">180,000<span>+</span></div>
+        <div class="stat-label">Businesses Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <div class="stat-number">16<span>+</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="stat-number">3,000<span>+</span></div>
+        <div class="stat-label">Monthly Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="stat-number">20,752<span>+</span></div>
+        <div class="stat-label">Five Star Reviews</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Mission ── -->
+  <section class="section mission-section">
+    <div class="section-inner">
+      <div class="mission-layout">
+        <div class="mission-visual">
+          <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Our Mission</h3>
+          <p>At Catax Solutions Private Limited, our mission is to empower every Indian entrepreneur — from first-time founders to growing businesses — by making legal and compliance services accessible, transparent, and truly affordable. We believe that no dream should be delayed because of red tape.</p>
+        </div>
+        <div class="mission-content">
+          <div class="section-tag"><i class="fa-solid fa-heart"></i> What Drives Us</div>
+          <h2 class="section-title">Built for <span>Indian Entrepreneurs</span></h2>
+          <p class="section-lead">India's regulatory landscape is complex — from company incorporation and GST compliance to trademark registration and annual filings. Catax Solutions Private Limited was founded with one goal: to remove these barriers so entrepreneurs can channel every ounce of energy into building their businesses.</p>
+          <div class="mission-pillars">
+            <div class="pillar-item">
+              <div class="pi-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+              <div class="pi-text">
+                <h4>Simplifying Legal Complexity</h4>
+                <p>We translate complicated legal requirements into clear, simple action steps that anyone can follow.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <div class="pi-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div class="pi-text">
+                <h4>Affordable for Every Business Size</h4>
+                <p>From solopreneurs to mid-sized firms, our pricing is designed to be fair and transparent — no hidden fees.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <div class="pi-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="pi-text">
+                <h4>Speed When It Matters</h4>
+                <p>Time is money. Our streamlined processes and expert team ensure your work is done quickly and correctly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Team ── -->
+  <section class="section team-section">
+    <div class="section-inner">
+      <div class="team-intro-grid">
+        <div>
+          <div class="section-tag"><i class="fa-solid fa-people-group"></i> Our Team</div>
+          <h2 class="section-title">Expert <span>Legal Professionals</span></h2>
+          <p class="section-lead">Our team comprises of highly qualified and experienced Chartered Accountants (CA), Company Secretaries (CS), and Advocates who bring together decades of combined expertise across all areas of Indian corporate law, taxation, and compliance.</p>
+        </div>
+        <div>
+          <p class="section-lead" style="margin-top: 40px;">Each client is assigned a dedicated relationship manager supported by domain specialists. Whether you need company incorporation, trademark filing, GST returns, or litigation support — our professionals handle it with precision and care, keeping you informed at every step.</p>
+        </div>
+      </div>
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="tc-avatar"><i class="fa-solid fa-calculator"></i></div>
+          <h4>Chartered Accountants</h4>
+          <div class="tc-role">Finance &amp; Tax Experts</div>
+          <p>Expert CAs handling GST, income tax, ROC filings, audits, and all financial compliance matters with accuracy.</p>
+        </div>
+        <div class="team-card">
+          <div class="tc-avatar"><i class="fa-solid fa-file-contract"></i></div>
+          <h4>Company Secretaries</h4>
+          <div class="tc-role">Corporate Compliance</div>
+          <p>Qualified CS professionals managing company incorporation, MCA filings, board resolutions, and secretarial compliance.</p>
+        </div>
+        <div class="team-card">
+          <div class="tc-avatar"><i class="fa-solid fa-gavel"></i></div>
+          <h4>Legal Advocates</h4>
+          <div class="tc-role">Law &amp; Litigation</div>
+          <p>Experienced advocates providing legal drafting, trademark prosecution, dispute resolution, and advisory services.</p>
+        </div>
+        <div class="team-card">
+          <div class="tc-avatar"><i class="fa-solid fa-headset"></i></div>
+          <h4>Relationship Managers</h4>
+          <div class="tc-role">Client Success</div>
+          <p>Dedicated client managers ensuring smooth communication, timely updates, and a seamless service experience.</p>
+        </div>
+        <div class="team-card">
+          <div class="tc-avatar"><i class="fa-solid fa-laptop-code"></i></div>
+          <h4>Tech &amp; Operations</h4>
+          <div class="tc-role">Process &amp; Systems</div>
+          <p>Our operations team ensures your documents are processed, tracked, and delivered through a secure digital workflow.</p>
+        </div>
+        <div class="team-card">
+          <div class="tc-avatar"><i class="fa-solid fa-shield-halved"></i></div>
+          <h4>Compliance Officers</h4>
+          <div class="tc-role">Regulatory Affairs</div>
+          <p>Specialist officers monitoring regulatory changes and ensuring your business stays compliant with evolving Indian law.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why Choose Us ── -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 8px;">
+        <div class="section-tag" style="display:inline-flex;"><i class="fa-solid fa-trophy"></i> Why Choose Catax Solutions Private Limited</div>
+      </div>
+      <h2 class="section-title" style="text-align:center;">The Catax Solutions Private Limited <span>Advantage</span></h2>
+      <p class="section-lead" style="text-align:center; margin: 0 auto;">Thousands of entrepreneurs choose Catax Solutions Private Limited every month. Here's why we're India's trusted legal services partner.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="wc-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3>Expert Team</h3>
+          <p>A multi-disciplinary team of CAs, CS professionals, and advocates with 16+ years of combined expertise in Indian corporate and tax law.</p>
+        </div>
+        <div class="why-card">
+          <div class="wc-icon"><i class="fa-solid fa-tag"></i></div>
+          <h3>Transparent Pricing</h3>
+          <p>No hidden fees, no surprises. We believe in complete pricing transparency so you always know exactly what you're paying for.</p>
+        </div>
+        <div class="why-card">
+          <div class="wc-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Quick Turnaround</h3>
+          <p>Our streamlined digital processes and expert team ensure fast delivery — we respect your time and business timelines.</p>
+        </div>
+        <div class="why-card">
+          <div class="wc-icon"><i class="fa-solid fa-life-ring"></i></div>
+          <h3>Dedicated Support</h3>
+          <p>A dedicated relationship manager and responsive support team are always available to answer queries and provide updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ── -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Ready to Start Your Business Journey?</h2>
+      <p>Join over 180,000 entrepreneurs who trust Catax Solutions Private Limited for their legal and compliance needs. Get started today with a free consultation.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-white"><i class="fa-solid fa-arrow-right"></i> Get Free Consultation</a>
+        <a href="https://wa.me/911234567890" class="btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+</body>
+</html>

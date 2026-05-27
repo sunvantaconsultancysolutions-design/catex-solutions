@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy | Captex Company</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding-top: 72px;
+    }
+
+    /* Hero */
+    .refund-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 65%, #1a2035 100%);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .refund-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 120%, rgba(239,68,68,.12), transparent);
+    }
+    .refund-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(239,68,68,.15);
+      border: 1px solid rgba(239,68,68,.3);
+      color: #fca5a5;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .refund-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 16px;
+    }
+    .refund-hero p {
+      color: #94a3b8;
+      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .refund-hero .last-updated {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Content */
+    .refund-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* Intro */
+    .intro-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .intro-card .intro-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, #fee2e2, #fecaca);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .intro-card .intro-icon i { color: #dc2626; font-size: 1.3rem; }
+    .intro-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .intro-card p { color: #475569; font-size: 0.93rem; line-height: 1.7; }
+
+    /* Section heading */
+    .section-heading {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-heading i { color: #ef4444; }
+
+    /* Refund Table */
+    .refund-table-wrap {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .refund-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    .refund-table thead tr {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+    .refund-table thead th {
+      padding: 16px 20px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      text-align: left;
+      letter-spacing: .3px;
+    }
+    .refund-table tbody tr {
+      border-bottom: 1px solid #f1f5f9;
+      transition: background .15s;
+    }
+    .refund-table tbody tr:hover { background: #f8fafc; }
+    .refund-table tbody tr:last-child { border-bottom: none; }
+    .refund-table tbody td {
+      padding: 16px 20px;
+      color: #475569;
+      vertical-align: middle;
+    }
+    .refund-table tbody td:first-child { font-weight: 600; color: #1e293b; }
+
+    /* Refund percentage badges */
+    .badge-refund {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-yellow { background: #fef9c3; color: #854d0e; }
+    .badge-orange { background: #ffedd5; color: #9a3412; }
+    .badge-red { background: #fee2e2; color: #991b1b; }
+
+    /* Process section */
+    .process-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-bottom: 32px;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 16px;
+    }
+    .process-step {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+    .process-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 44px;
+      bottom: -4px;
+      width: 2px;
+      background: #e2e8f0;
+    }
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #fee2e2, #fecaca);
+      border: 2px solid #fca5a5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #dc2626;
+      flex-shrink: 0;
+    }
+    .step-content {
+      padding-bottom: 28px;
+    }
+    .step-content h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .step-content p {
+      color: #64748b;
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* Timeline highlights */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .timeline-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 22px 20px;
+      text-align: center;
+    }
+    .timeline-card .tc-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 1.1rem;
+    }
+    .timeline-card .tc-icon.blue { background: #dbeafe; color: #1d4ed8; }
+    .timeline-card .tc-icon.green { background: #dcfce7; color: #16a34a; }
+    .timeline-card .tc-icon.orange { background: #ffedd5; color: #ea580c; }
+    .timeline-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .timeline-card p { font-size: 0.82rem; color: #64748b; }
+
+    /* Non-refundable block */
+    .non-refundable {
+      background: linear-gradient(135deg, #fef2f2, #fee2e2);
+      border: 1px solid #fca5a5;
+      border-left: 4px solid #ef4444;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+    .non-refundable h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #991b1b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .non-refundable ul { list-style: none; padding: 0; }
+    .non-refundable ul li {
+      color: #7f1d1d;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+    .non-refundable ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ef4444;
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: 16px;
+      padding: 40px 36px;
+      text-align: center;
+    }
+    .contact-cta h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 10px;
+    }
+    .contact-cta p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 22px; }
+    .contact-cta .email-display {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(239,68,68,.15);
+      border: 1px solid rgba(239,68,68,.3);
+      color: #fca5a5;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .contact-cta .email-display:hover { background: rgba(239,68,68,.25); }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="refund-hero">
+    <div class="badge"><i class="fa-solid fa-rotate-left"></i> Refund &amp; Cancellation</div>
+    <h1>Refund Policy</h1>
+    <p>We believe in transparency. Here's exactly what you can expect if you need to cancel or request a refund for our services.</p>
+    <div class="last-updated"><i class="fa-regular fa-calendar"></i> Last Updated: May 2024</div>
+  </section>
+
+  <!-- Content -->
+  <div class="refund-content">
+
+    <!-- Intro -->
+    <div class="intro-card">
+      <div class="intro-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+      <div>
+        <h3>Our Commitment to Fairness</h3>
+        <p>At Captex Company, we understand that plans change. Our refund policy is designed to be fair to both our clients and our team. Refunds are calculated based on the stage at which your service is when the cancellation is requested. All refund decisions are final and processed within 7–10 business days.</p>
+      </div>
+    </div>
+
+    <!-- Refund Schedule Table -->
+    <h2 class="section-heading"><i class="fa-solid fa-table-list"></i> Refund Schedule</h2>
+    <div class="refund-table-wrap">
+      <table class="refund-table">
+        <thead>
+          <tr>
+            <th style="width:35%;">Cancellation Stage</th>
+            <th style="width:20%;">Refund Amount</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><i class="fa-solid fa-clock" style="color:#22c55e;margin-right:8px;"></i>Within 24 Hours of Payment</td>
+            <td><span class="badge-refund badge-green"><i class="fa-solid fa-arrow-up"></i>90% Refund</span></td>
+            <td>Full refund minus a small administrative processing fee of 10%. No questions asked.</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-hourglass-half" style="color:#eab308;margin-right:8px;"></i>After 24 Hours — Before Work Starts</td>
+            <td><span class="badge-refund badge-yellow"><i class="fa-solid fa-minus"></i>75% Refund</span></td>
+            <td>If cancelled after 24 hours but before our team has initiated any work on your case, 75% of the service fee will be refunded.</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-person-digging" style="color:#f97316;margin-right:8px;"></i>After Work Has Started</td>
+            <td><span class="badge-refund badge-orange"><i class="fa-solid fa-minus"></i>50% Refund</span></td>
+            <td>Once our team has commenced document preparation, review, or filing assistance, a 50% refund of the service fee will be issued.</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-file-invoice" style="color:#ef4444;margin-right:8px;"></i>After Government Fees Paid</td>
+            <td><span class="badge-refund badge-red"><i class="fa-solid fa-xmark"></i>No Refund on Govt. Fees</span></td>
+            <td>Government filing fees, stamp duty, or statutory charges paid to authorities on your behalf are strictly non-refundable. Service fee refund may still apply based on stage.</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-flag-checkered" style="color:#ef4444;margin-right:8px;"></i>After Filing is Completed</td>
+            <td><span class="badge-refund badge-red"><i class="fa-solid fa-xmark"></i>No Refund</span></td>
+            <td>Once the application or filing has been submitted to the relevant government portal or authority, no refund can be processed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Timeline highlights -->
+    <h2 class="section-heading"><i class="fa-solid fa-stopwatch"></i> Processing Timeline</h2>
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <div class="tc-icon blue"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <h4>24–48 hrs</h4>
+        <p>Refund request acknowledgement after email received</p>
+      </div>
+      <div class="timeline-card">
+        <div class="tc-icon orange"><i class="fa-solid fa-file-magnifying-glass"></i></div>
+        <h4>3–5 days</h4>
+        <p>Review and verification of cancellation request</p>
+      </div>
+      <div class="timeline-card">
+        <div class="tc-icon green"><i class="fa-solid fa-money-bill-transfer"></i></div>
+        <h4>7–10 days</h4>
+        <p>Refund credited to original payment method</p>
+      </div>
+    </div>
+
+    <!-- Non-refundable items -->
+    <div class="non-refundable">
+      <h4><i class="fa-solid fa-circle-xmark"></i> Non-Refundable Items</h4>
+      <ul>
+        <li>Government filing fees, stamp duty, or statutory charges paid to any authority on your behalf.</li>
+        <li>Third-party costs such as notarization, attestation, courier, or translation charges.</li>
+        <li>Fees for completed services where filing or submission has been made.</li>
+        <li>Emergency or priority processing fees once the work has commenced.</li>
+      </ul>
+    </div>
+
+    <!-- Refund Process -->
+    <div class="process-card">
+      <h2 class="section-heading" style="margin-bottom:0;"><i class="fa-solid fa-list-check"></i> How to Request a Refund</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Send a Refund Request Email</h4>
+            <p>Email us at <strong style="color:#ef4444;">refund@captexcompany.com</strong> with your full name, order ID or service reference number, date of payment, and reason for cancellation.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Receive Acknowledgement</h4>
+            <p>Our team will acknowledge your refund request within 24–48 business hours and provide a reference number for tracking purposes.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Review &amp; Verification</h4>
+            <p>We will assess the stage of your service and verify applicable refund amounts as per our refund schedule. We may contact you for clarification if needed.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Refund Approval &amp; Processing</h4>
+            <p>Upon approval, the refund will be initiated to your original payment method within <strong>7–10 business days</strong>. You will receive a confirmation email once processed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="contact-cta">
+      <h3>Ready to Request a Refund?</h3>
+      <p>Send your refund request directly to our dedicated refund team. We'll take it from there.</p>
+      <a href="mailto:refund@captexcompany.com" class="email-display">
+        <i class="fa-solid fa-envelope"></i>
+        refund@captexcompany.com
+      </a>
+    </div>
+
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+</body>
+</html>

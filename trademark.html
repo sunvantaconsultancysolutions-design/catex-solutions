@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trademark Registration | Captex Company</title>
+  <meta name="description" content="Register your trademark online with Captex Company. Protect your brand name, logo, and identity legally in India." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding-top: 72px;
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+      color: #fff;
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(79,70,229,0.18) 0%, transparent 60%),
+                  radial-gradient(ellipse at 75% 20%, rgba(79,70,229,0.12) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .page-hero .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(79,70,229,0.18);
+      border: 1px solid rgba(79,70,229,0.45);
+      color: #a5b4fc;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .4px;
+      margin-bottom: 20px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 560px;
+      margin: 0 auto 28px;
+      line-height: 1.65;
+    }
+    .hero-price {
+      display: inline-block;
+      background: linear-gradient(135deg, #4F46E5, #7c3aed);
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 999px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(79,70,229,0.4);
+    }
+    .hero-price span { font-size: .9rem; opacity: .85; font-weight: 500; }
+
+    /* ── Section Wrapper ── */
+    .section { padding: 64px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      text-align: center;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      text-align: center;
+      color: #64748b;
+      font-size: 1rem;
+      margin-bottom: 48px;
+    }
+
+    /* ── Form Card ── */
+    .form-section { background: #fff; }
+    .form-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 44px 40px;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+    }
+    .form-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .form-card .form-lead {
+      color: #64748b;
+      font-size: .95rem;
+      margin-bottom: 28px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 18px; }
+    .form-group label {
+      font-size: .85rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: .95rem;
+      font-family: inherit;
+      color: #1e293b;
+      background: #f9fafb;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #4F46E5;
+      box-shadow: 0 0 0 3px rgba(79,70,229,0.12);
+      background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #4F46E5, #7c3aed);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+      margin-top: 6px;
+    }
+    .btn-submit:hover { opacity: .92; transform: translateY(-1px); }
+
+    /* ── Features Grid ── */
+    .features-section { background: #f1f5f9; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .feature-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(79,70,229,0.1);
+      color: #4F46E5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+    .feature-card p { font-size: .88rem; color: #64748b; line-height: 1.5; }
+
+    /* ── Steps ── */
+    .steps-section { background: #fff; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      padding-top: 20px;
+    }
+    .step-card {
+      text-align: center;
+      padding: 36px 20px 28px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+    .step-num {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4F46E5, #7c3aed);
+      color: #fff;
+      font-weight: 800;
+      font-size: .95rem;
+      line-height: 36px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(79,70,229,0.35);
+    }
+    .step-card h3 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-top: 10px; }
+
+    /* ── FAQ ── */
+    .faq-section { background: #f1f5f9; }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 28px 32px;
+    }
+    .faq-item:first-child { border-top: 1px solid #e2e8f0; border-radius: 14px 14px 0 0; }
+    .faq-item:last-child { border-radius: 0 0 14px 14px; }
+    .faq-number-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .faq-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4F46E5, #7c3aed);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .faq-q-text {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+      padding-top: 4px;
+    }
+    .faq-answer-text {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.75;
+      padding-left: 48px;
+    }
+
+    /* ── CTA Banner ── */
+    .cta-section {
+      background: linear-gradient(135deg, #4F46E5, #7c3aed);
+      color: #fff;
+      text-align: center;
+      padding: 72px 24px;
+    }
+    .cta-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 14px; }
+    .cta-section p { font-size: 1.05rem; opacity: .88; margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .btn-cta {
+      display: inline-block;
+      background: #fff;
+      color: #4F46E5;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="hero-tag">
+      <i class="fas fa-trademark"></i> Protect Your Brand
+    </div>
+    <h1>Trademark Registration</h1>
+    <p>Protect your brand name, logo, and identity legally across India</p>
+    <div class="hero-price">Starting at ₹5,499 <span>/ application</span></div>
+  </section>
+
+  <!-- Form -->
+  <section class="section form-section">
+    <div class="section-inner">
+      <div class="form-card">
+        <h2>Get Started with Trademark Registration</h2>
+        <p class="form-lead">Fill in your details and our experts will reach out within 24 hours.</p>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tm-name">Full Name</label>
+              <input type="text" id="tm-name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="tm-phone">Phone Number</label>
+              <input type="tel" id="tm-phone" placeholder="+91 98765 43210" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="tm-email">Email Address</label>
+            <input type="email" id="tm-email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tm-brand">Brand / Mark Name</label>
+              <input type="text" id="tm-brand" placeholder="e.g. MyBrand™" required />
+            </div>
+            <div class="form-group">
+              <label for="tm-class">Trademark Class</label>
+              <select id="tm-class">
+                <option value="">Select class</option>
+                <option>Class 35 – Business Services</option>
+                <option>Class 41 – Education</option>
+                <option>Class 42 – Technology</option>
+                <option>Class 25 – Clothing</option>
+                <option>Class 30 – Food &amp; Beverages</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="tm-type">Type of Mark</label>
+            <select id="tm-type">
+              <option value="">Select type</option>
+              <option>Word Mark</option>
+              <option>Logo / Device Mark</option>
+              <option>Combined Mark (Word + Logo)</option>
+              <option>Slogan / Tagline</option>
+              <option>Sound Mark</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tm-message">Additional Details</label>
+            <textarea id="tm-message" placeholder="Describe your business and the goods/services you offer..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane" style="margin-right:8px;"></i>Submit Application Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section features-section">
+    <div class="section-inner">
+      <h2 class="section-title">What's Included</h2>
+      <p class="section-sub">Everything you need for a successful trademark registration</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-search"></i></div>
+          <div>
+            <h3>Trademark Search Report</h3>
+            <p>Comprehensive search across all classes to ensure your mark is available.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
+          <div>
+            <h3>Application Filing (TM-A)</h3>
+            <p>Expert filing of the TM-A form with the Indian Trademark Registry.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-receipt"></i></div>
+          <div>
+            <h3>TM Acknowledgement</h3>
+            <p>Official acknowledgement number so you can start using the ™ symbol.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-satellite-dish"></i></div>
+          <div>
+            <h3>Status Tracking</h3>
+            <p>Real-time tracking of your application through every stage of the process.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+          <div>
+            <h3>Objection Handling (if any)</h3>
+            <p>Professional response to any examination reports or objections raised.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+          <div>
+            <h3>TM Certificate on Grant</h3>
+            <p>Official Trademark Registration Certificate upon successful registration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section steps-section">
+    <div class="section-inner">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Simple, transparent process from start to finish</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <i class="fas fa-clipboard-list" style="font-size:2rem;color:#4F46E5;"></i>
+          <h3>Fill the Form</h3>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <i class="fas fa-search" style="font-size:2rem;color:#4F46E5;"></i>
+          <h3>Trademark Search</h3>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <i class="fas fa-file-upload" style="font-size:2rem;color:#4F46E5;"></i>
+          <h3>Application Filing</h3>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <i class="fas fa-certificate" style="font-size:2rem;color:#4F46E5;"></i>
+          <h3>Get TM Certificate</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="section-inner">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you need to know about trademark registration</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">1</div>
+            <div class="faq-q-text">What can be registered as a trademark?</div>
+          </div>
+          <div class="faq-answer-text">Words, names, logos, slogans, sounds, colours, shapes, or any combination that distinguishes your goods/services from others can be registered as a trademark.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">2</div>
+            <div class="faq-q-text">How long is a trademark valid?</div>
+          </div>
+          <div class="faq-answer-text">A trademark registration is valid for 10 years from the date of filing and can be renewed indefinitely for further 10-year periods by paying the renewal fee.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">3</div>
+            <div class="faq-q-text">How long does trademark registration take?</div>
+          </div>
+          <div class="faq-answer-text">The complete process takes 18–24 months. However, you get TM status (right to use ™ symbol) immediately after filing. The ® symbol is used only after final registration.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">4</div>
+            <div class="faq-q-text">What is the difference between TM and R symbol?</div>
+          </div>
+          <div class="faq-answer-text">™ (TM) symbol can be used once you've filed your trademark application. ® (Registered) symbol can only be used after your trademark is officially registered by the Trademark Registry.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">5</div>
+            <div class="faq-q-text">Can I file in multiple classes?</div>
+          </div>
+          <div class="faq-answer-text">Yes, you should file in all relevant classes where your goods/services fall. Each class requires a separate application and fee.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Protect Your Brand?</h2>
+    <p>Join thousands of entrepreneurs who secured their brand identity with Captex. Get started in minutes.</p>
+    <a href="#" class="btn-cta"><i class="fas fa-trademark" style="margin-right:8px;"></i>Register Your Trademark Now</a>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>

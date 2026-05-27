@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Catax Solutions Private Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; padding-top: 72px; }
+
+    /* ── Hero ── */
+    .contact-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #312e81 100%);
+      padding: 90px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99,102,241,.18);
+      border: 1px solid rgba(99,102,241,.35);
+      color: #a5b4fc;
+      font-family: 'Outfit', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+    .contact-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .contact-hero h1 span {
+      background: linear-gradient(90deg, #818cf8, #c4b5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .contact-hero p {
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      color: #cbd5e1;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Quick Strip ── */
+    .quick-strip { background: #fff; border-bottom: 1px solid #e2e8f0; }
+    .quick-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .qs-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 22px 24px;
+      border-right: 1px solid #f1f5f9;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .qs-item:last-child { border-right: none; }
+    .qs-item:hover { background: #f8fafc; }
+    .qs-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .qs-icon.phone { background: #ede9fe; color: #6366f1; }
+    .qs-icon.email { background: #e0f2fe; color: #0ea5e9; }
+    .qs-icon.wa    { background: #dcfce7; color: #22c55e; }
+    .qs-text .qs-label { font-size: .75rem; color: #94a3b8; font-weight: 500; margin-bottom: 2px; }
+    .qs-text .qs-val   { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: .88rem; color: #1e293b; }
+
+    /* ── Main ── */
+    .contact-main {
+      padding: 72px 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ── Info Column ── */
+    .contact-info-col { display: flex; flex-direction: column; gap: 20px; }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ede9fe;
+      color: #6366f1;
+      font-family: 'Outfit', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+    .info-col-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .info-col-title span { color: #6366f1; }
+    .info-col-lead { font-size: .95rem; color: #64748b; line-height: 1.7; margin-bottom: 12px; }
+
+    .contact-detail-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .cd-item { display: flex; align-items: flex-start; gap: 14px; }
+    .cd-icon {
+      width: 42px; height: 42px; min-width: 42px;
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .cd-icon.phone { background: #ede9fe; color: #6366f1; }
+    .cd-icon.email { background: #e0f2fe; color: #0ea5e9; }
+    .cd-icon.addr  { background: #fce7f3; color: #ec4899; }
+    .cd-icon.clock { background: #fef3c7; color: #d97706; }
+    .cd-icon.wa    { background: #dcfce7; color: #22c55e; }
+    .cd-body .cd-label {
+      font-size: .72rem; color: #94a3b8; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px;
+    }
+    .cd-body .cd-val {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600; font-size: .9rem; color: #1e293b; line-height: 1.55;
+    }
+    .cd-body .cd-val a { color: #6366f1; text-decoration: none; }
+    .cd-body .cd-val a:hover { text-decoration: underline; }
+    .cd-body .cd-sub { font-size: .8rem; color: #64748b; margin-top: 3px; font-weight: 400; }
+    .cd-divider { border: none; border-top: 1px solid #f1f5f9; margin: 2px 0; }
+
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #22c55e;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: .88rem;
+      padding: 10px 20px;
+      border-radius: 9px;
+      text-decoration: none;
+      margin-top: 14px;
+      transition: transform .2s, box-shadow .2s;
+      align-self: flex-start;
+    }
+    .wa-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(34,197,94,.35); }
+
+    /* ── Form ── */
+    .contact-form-col {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.05);
+    }
+    .form-header { margin-bottom: 28px; }
+    .form-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800; font-size: 1.5rem; color: #0f172a; margin-bottom: 6px;
+    }
+    .form-header p { font-size: .88rem; color: #64748b; line-height: 1.6; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    label { font-size: .82rem; font-weight: 600; color: #374151; }
+    label span { color: #ef4444; margin-left: 2px; }
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid #e2e8f0; border-radius: 10px;
+      font-family: 'Inter', sans-serif; font-size: .9rem; color: #1e293b;
+      background: #f8fafc; outline: none;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+      appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #818cf8; background: #fff;
+      box-shadow: 0 0 0 3px rgba(129,140,248,.15);
+    }
+    textarea { resize: vertical; min-height: 120px; }
+    .select-wrapper { position: relative; }
+    .select-wrapper::after {
+      content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      color: #94a3b8; pointer-events: none; font-size: .8rem;
+    }
+    .form-check {
+      display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px;
+    }
+    .form-check input[type="checkbox"] {
+      width: 16px; height: 16px; min-width: 16px;
+      margin-top: 2px; accent-color: #6366f1; cursor: pointer;
+    }
+    .form-check label { font-size: .83rem; color: #64748b; font-weight: 400; cursor: pointer; }
+    .form-check label a { color: #6366f1; text-decoration: none; }
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff; font-family: 'Outfit', sans-serif;
+      font-weight: 700; font-size: 1rem; padding: 14px 24px;
+      border-radius: 12px; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(99,102,241,.35);
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(99,102,241,.45); }
+    .form-note {
+      display: flex; align-items: center; gap: 6px;
+      margin-top: 14px; font-size: .78rem; color: #94a3b8;
+    }
+    .form-note i { color: #22c55e; }
+
+    /* ── Branches ── */
+    .branches-section {
+      padding: 0 24px 56px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .branches-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800; font-size: 1.4rem; color: #0f172a; margin-bottom: 20px;
+    }
+    .branches-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .branch-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .branch-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .branch-card.regd::before  { background: linear-gradient(90deg,#6366f1,#8b5cf6); }
+    .branch-card.ame::before   { background: linear-gradient(90deg,#0ea5e9,#6366f1); }
+    .branch-card.sec::before   { background: linear-gradient(90deg,#22c55e,#0ea5e9); }
+    .branch-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;
+    }
+    .branch-card.regd .branch-badge { background: #ede9fe; color: #6366f1; }
+    .branch-card.ame  .branch-badge { background: #e0f2fe; color: #0ea5e9; }
+    .branch-card.sec  .branch-badge { background: #dcfce7; color: #22c55e; }
+    .branch-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700; font-size: .98rem; color: #0f172a; margin-bottom: 8px;
+    }
+    .branch-card p {
+      font-size: .85rem; color: #475569; line-height: 1.65;
+    }
+    .branch-map-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 14px; font-size: .8rem; font-weight: 600;
+      color: #6366f1; text-decoration: none;
+    }
+    .branch-map-btn:hover { text-decoration: underline; }
+
+    /* ── Map Section ── */
+    .map-section {
+      padding: 0 24px 72px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .map-header { margin-bottom: 18px; }
+    .map-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800; font-size: 1.4rem; color: #0f172a; margin-bottom: 6px;
+    }
+    .map-header p { font-size: .88rem; color: #64748b; }
+    .map-frame-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    }
+    .map-frame-wrap iframe {
+      width: 100%; height: 420px; display: block; border: none;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #312e81 100%);
+      padding: 72px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(99,102,241,.2), transparent 70%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800;
+      color: #fff; margin-bottom: 14px;
+    }
+    .cta-section p { color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 30px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: #fff; color: #4f46e5;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .95rem;
+      padding: 13px 30px; border-radius: 10px; border: none; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.2); }
+    .btn-wa {
+      background: #22c55e; color: #fff;
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: .95rem;
+      padding: 13px 30px; border-radius: 10px; border: none; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,197,94,.4); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .quick-strip-grid { grid-template-columns: 1fr; }
+      .qs-item { border-right: none; border-bottom: 1px solid #f1f5f9; }
+      .qs-item:last-child { border-bottom: none; }
+      .branches-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-col { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- ── Hero ── -->
+  <section class="contact-hero">
+    <div class="badge"><i class="fa-solid fa-headset"></i> We're Here to Help</div>
+    <h1>Contact <span>Catax Solutions</span></h1>
+    <p>Reach our expert team for a free consultation. Available Monday – Saturday, 9 AM – 7 PM IST for all your legal and compliance needs.</p>
+  </section>
+
+  <!-- ── Quick Strip ── -->
+  <section class="quick-strip">
+    <div class="quick-strip-grid">
+      <a href="tel:+919248042011" class="qs-item">
+        <div class="qs-icon phone"><i class="fa-solid fa-phone"></i></div>
+        <div class="qs-text">
+          <div class="qs-label">Call Us</div>
+          <div class="qs-val">+91-9248042011 / +91-9248042012</div>
+        </div>
+      </a>
+      <a href="mailto:info.catax@yahoo.in" class="qs-item">
+        <div class="qs-icon email"><i class="fa-solid fa-envelope"></i></div>
+        <div class="qs-text">
+          <div class="qs-label">Email Us</div>
+          <div class="qs-val">info.catax@yahoo.in</div>
+        </div>
+      </a>
+      <a href="https://wa.me/919248042011" target="_blank" rel="noopener" class="qs-item">
+        <div class="qs-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="qs-text">
+          <div class="qs-label">WhatsApp</div>
+          <div class="qs-val">+91-9248042011</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Main Contact Section ── -->
+  <section class="contact-main">
+    <div class="contact-layout">
+
+      <!-- Left: Contact Info -->
+      <div class="contact-info-col">
+        <div>
+          <div class="section-tag"><i class="fa-solid fa-circle-info"></i> Contact Information</div>
+          <h2 class="info-col-title">Get in <span>Touch With Us</span></h2>
+          <p class="info-col-lead">Whether you have a question about our services, need a quote, or want to track your filing — we're just a call or message away.</p>
+        </div>
+
+        <div class="contact-detail-card">
+
+          <!-- Phone -->
+          <div class="cd-item">
+            <div class="cd-icon phone"><i class="fa-solid fa-phone"></i></div>
+            <div class="cd-body">
+              <div class="cd-label">Phone Numbers</div>
+              <div class="cd-val">
+                <a href="tel:+919248042011">+91-9248042011</a> /
+                <a href="tel:+919248042012">+91-9248042012</a>
+              </div>
+              <div class="cd-val">
+                <a href="tel:+919248042013">+91-9248042013</a> /
+                <a href="tel:+919248042016">+91-9248042016</a>
+              </div>
+              <div class="cd-sub">Landline: <a href="tel:+914035767523">+91-040-35767523</a></div>
+            </div>
+          </div>
+
+          <hr class="cd-divider"/>
+
+          <!-- Email -->
+          <div class="cd-item">
+            <div class="cd-icon email"><i class="fa-solid fa-envelope"></i></div>
+            <div class="cd-body">
+              <div class="cd-label">Email Addresses</div>
+              <div class="cd-val"><a href="mailto:info.catax@yahoo.in">info.catax@yahoo.in</a></div>
+              <div class="cd-val"><a href="mailto:catax.information@gmail.com">catax.information@gmail.com</a></div>
+              <div class="cd-val"><a href="mailto:mca.catax@gmail.com">mca.catax@gmail.com</a></div>
+              <div class="cd-val"><a href="mailto:catax.gst@gmail.com">catax.gst@gmail.com</a></div>
+            </div>
+          </div>
+
+          <hr class="cd-divider"/>
+
+          <!-- Registered Address -->
+          <div class="cd-item">
+            <div class="cd-icon addr"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="cd-body">
+              <div class="cd-label">Registered &amp; Corporate Office</div>
+              <div class="cd-val">10-1-34, 1st Floor, Fathenagar Main Road,<br>Hyderabad, Telangana – 500018</div>
+            </div>
+          </div>
+
+          <hr class="cd-divider"/>
+
+          <!-- Business Hours -->
+          <div class="cd-item">
+            <div class="cd-icon clock"><i class="fa-solid fa-clock"></i></div>
+            <div class="cd-body">
+              <div class="cd-label">Business Hours</div>
+              <div class="cd-val">Mon – Sat: 9:00 AM – 7:00 PM IST</div>
+              <div class="cd-sub">Sunday: Closed</div>
+            </div>
+          </div>
+
+          <hr class="cd-divider"/>
+
+          <!-- WhatsApp -->
+          <div class="cd-item">
+            <div class="cd-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="cd-body">
+              <div class="cd-label">WhatsApp</div>
+              <div class="cd-val"><a href="https://wa.me/919248042011" target="_blank" rel="noopener">+91-9248042011</a></div>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="https://wa.me/919248042011" target="_blank" rel="noopener" class="wa-btn">
+          <i class="fa-brands fa-whatsapp" style="font-size:1.1rem;"></i> Chat on WhatsApp Now
+        </a>
+
+        <!-- Social -->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://www.facebook.com/" target="_blank" style="display:flex;align-items:center;gap:7px;padding:9px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;font-size:.82rem;font-weight:600;color:#1e293b;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='#818cf8'" onmouseout="this.style.borderColor='#e2e8f0'">
+            <i class="fa-brands fa-facebook-f" style="color:#1877f2;"></i> Facebook
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" style="display:flex;align-items:center;gap:7px;padding:9px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;font-size:.82rem;font-weight:600;color:#1e293b;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='#818cf8'" onmouseout="this.style.borderColor='#e2e8f0'">
+            <i class="fa-brands fa-linkedin-in" style="color:#0a66c2;"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" style="display:flex;align-items:center;gap:7px;padding:9px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:9px;font-size:.82rem;font-weight:600;color:#1e293b;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='#818cf8'" onmouseout="this.style.borderColor='#e2e8f0'">
+            <i class="fa-brands fa-instagram" style="color:#e1306c;"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="contact-form-col">
+        <div class="form-header">
+          <h2>Send Us a Message</h2>
+          <p>Fill out the form below and one of our experts will get back to you within 2 business hours.</p>
+        </div>
+        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name <span>*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Rahul Sharma" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span>*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mobile">Mobile Number <span>*</span></label>
+              <input type="tel" id="mobile" name="mobile" placeholder="+91 92480 42011" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject / Service <span>*</span></label>
+              <div class="select-wrapper">
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select a Service</option>
+                  <optgroup label="Business Registration">
+                    <option value="pvt-ltd">Private Limited Company</option>
+                    <option value="llp">LLP Registration</option>
+                    <option value="opc">One Person Company (OPC)</option>
+                    <option value="section8">Section 8 / NGO</option>
+                  </optgroup>
+                  <optgroup label="Tax &amp; GST">
+                    <option value="gst-reg">GST Registration</option>
+                    <option value="gst-return">GST Return Filing</option>
+                    <option value="itr">Income Tax Return (ITR)</option>
+                    <option value="tds">TDS Filing</option>
+                  </optgroup>
+                  <optgroup label="Intellectual Property">
+                    <option value="trademark">Trademark Registration</option>
+                    <option value="copyright">Copyright Registration</option>
+                  </optgroup>
+                  <optgroup label="Compliance">
+                    <option value="annual-compliance">Annual ROC Compliance</option>
+                    <option value="mca">MCA Filings</option>
+                    <option value="audit">Audit &amp; Accounting</option>
+                  </optgroup>
+                  <optgroup label="Licences">
+                    <option value="msme">MSME / Udyam Registration</option>
+                    <option value="iso">ISO Certification</option>
+                  </optgroup>
+                  <option value="other">Other / General Enquiry</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span>*</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your requirement..." required></textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">I agree to the <a href="privacy-policy.html">Privacy Policy</a> and consent to Catax Solutions Private Limited contacting me regarding my enquiry.</label>
+          </div>
+          <button type="submit" class="submit-btn">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <div class="form-note">
+            <i class="fa-solid fa-shield-halved"></i>
+            Your information is secure and will never be shared with third parties.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Branch Offices ── -->
+  <section class="branches-section">
+    <h2><i class="fa-solid fa-map-pin" style="color:#6366f1;margin-right:8px;"></i>Our Office Locations</h2>
+    <div class="branches-grid">
+
+      <div class="branch-card regd">
+        <div class="branch-badge"><i class="fa-solid fa-star"></i> Registered Office</div>
+        <h3>Fathenagar, Hyderabad</h3>
+        <p>10-1-34, 1st Floor, Fathenagar Main Road,<br>Hyderabad, Telangana – 500018</p>
+        <a href="https://maps.google.com/?q=10-1-34,Fathenagar+Main+Road,Hyderabad,Telangana+500018" target="_blank" rel="noopener" class="branch-map-btn">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Maps
+        </a>
+      </div>
+
+      <div class="branch-card ame">
+        <div class="branch-badge"><i class="fa-solid fa-building"></i> Branch Office</div>
+        <h3>Ameerpet, Hyderabad</h3>
+        <p>7-1-40/1, 4th Floor, D.K. Road, Ameerpet,<br>Hyderabad, Telangana – 500038</p>
+        <a href="https://maps.google.com/?q=7-1-40/1,DK+Road,Ameerpet,Hyderabad,Telangana+500038" target="_blank" rel="noopener" class="branch-map-btn">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Maps
+        </a>
+      </div>
+
+      <div class="branch-card sec">
+        <div class="branch-badge"><i class="fa-solid fa-building"></i> Branch Office</div>
+        <h3>Secunderabad</h3>
+        <p>5-2-392/1, First Floor, Lane-1, Street-7, Hyderbasti,<br>R.P. Road, Secunderabad, Telangana – 500003</p>
+        <a href="https://maps.google.com/?q=5-2-392/1,RP+Road,Secunderabad,Telangana+500003" target="_blank" rel="noopener" class="branch-map-btn">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Maps
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Map Section ── -->
+  <section class="map-section">
+    <div class="map-header">
+      <h2><i class="fa-solid fa-location-dot" style="color:#6366f1;margin-right:8px;"></i>Find Our Office</h2>
+      <p>Catax Solutions Private Limited — 10-1-34, 1st Floor, Fathenagar Main Road, Hyderabad, Telangana – 500018</p>
+    </div>
+    <div class="map-frame-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15223.760387687758!2d78.449488!3d17.462581!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2f8b54d208ebbc95!2sCatax%20Solutions%20Private%20Limited!5e0!3m2!1sen!2sin!4v1600060752042!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Catax Solutions Private Limited - Hyderabad Office Location">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ── -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Ready to Grow Your Business?</h2>
+      <p>Don't let legal complexity slow you down. Get a free consultation from our expert team and take the first step toward building your dream business today.</p>
+      <div class="cta-btns">
+        <a href="tel:+919248042011" class="btn-white"><i class="fa-solid fa-phone"></i> Call: +91-9248042011</a>
+        <a href="https://wa.me/919248042011" class="btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const btn  = form.querySelector('.submit-btn');
+      const name = document.getElementById('fullName').value.trim();
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(el => {
+        if (el.type === 'checkbox' && !el.checked) {
+          valid = false;
+          el.closest('.form-check').style.outline = '2px solid #ef4444';
+          el.closest('.form-check').style.borderRadius = '6px';
+        } else if (!el.value.trim()) {
+          valid = false; el.style.borderColor = '#ef4444';
+        } else {
+          el.style.borderColor = '';
+          if (el.type === 'checkbox') el.closest('.form-check').style.outline = '';
+        }
+      });
+      if (!valid) return;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-check-circle"></i> Message Sent!';
+        btn.style.background = '#22c55e';
+        form.insertAdjacentHTML('beforeend', `<div style="margin-top:16px;padding:14px 18px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;font-size:.88rem;color:#15803d;display:flex;align-items:center;gap:8px;"><i class="fa-solid fa-circle-check"></i> Thank you, <strong>${name || 'there'}</strong>! We'll contact you within 2 business hours.</div>`);
+      }, 1800);
+    }
+  </script>
+</body>
+</html>

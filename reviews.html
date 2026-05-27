@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Reviews | Catax Solutions Private Limited</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding-top: 72px;
+    }
+
+    /* ── Hero ── */
+    .reviews-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #312e81 100%);
+      padding: 90px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .reviews-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .reviews-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(234,179,8,.15);
+      border: 1px solid rgba(234,179,8,.35);
+      color: #fde68a;
+      font-family: 'Outfit', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+    .reviews-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .reviews-hero h1 span {
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .reviews-hero .hero-stars {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .reviews-hero .hero-stars i { color: #fbbf24; font-size: 1.6rem; }
+    .reviews-hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      color: #cbd5e1;
+      max-width: 540px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #1e293b;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 13px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(251,191,36,.3);
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(251,191,36,.45); }
+
+    /* ── Stats Bar ── */
+    .stats-bar {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .stats-bar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .sbar-item {
+      padding: 30px 20px;
+      text-align: center;
+      border-right: 1px solid #f1f5f9;
+    }
+    .sbar-item:last-child { border-right: none; }
+    .sbar-item .sbar-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .sbar-item .sbar-val span { color: #f59e0b; }
+    .sbar-item .sbar-label {
+      font-size: .82rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* ── Reviews Section ── */
+    .reviews-section {
+      padding: 72px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fef3c7;
+      color: #d97706;
+      font-family: 'Outfit', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .section-title span { color: #f59e0b; }
+    .section-lead {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid #e2e8f0;
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,.08);
+      border-color: #fde68a;
+    }
+    .review-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .rc-avatar {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .rc-meta h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      color: #1e293b;
+      margin-bottom: 2px;
+    }
+    .rc-meta .rc-city {
+      font-size: .78rem;
+      color: #64748b;
+    }
+    .google-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .72rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .google-badge .g-icon { width: 16px; height: 16px; }
+    .stars { display: flex; gap: 3px; }
+    .stars i { color: #fbbf24; font-size: .9rem; }
+    .review-service-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #ede9fe;
+      color: #6366f1;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .review-text {
+      font-size: .88rem;
+      color: #475569;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+    .review-text::before {
+      content: '\201C';
+      font-size: 1.4rem;
+      color: #fbbf24;
+      font-family: Georgia, serif;
+      line-height: 0;
+      vertical-align: -0.3em;
+      margin-right: 2px;
+    }
+    .review-date {
+      font-size: .75rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    /* Avatar colour palette */
+    .av-indigo { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+    .av-blue   { background: linear-gradient(135deg, #3b82f6, #6366f1); }
+    .av-teal   { background: linear-gradient(135deg, #14b8a6, #06b6d4); }
+    .av-rose   { background: linear-gradient(135deg, #f43f5e, #ec4899); }
+    .av-amber  { background: linear-gradient(135deg, #f59e0b, #f97316); }
+    .av-green  { background: linear-gradient(135deg, #22c55e, #16a34a); }
+    .av-purple { background: linear-gradient(135deg, #8b5cf6, #d946ef); }
+    .av-sky    { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
+    .av-pink   { background: linear-gradient(135deg, #ec4899, #f43f5e); }
+
+    /* ── Trust Banner ── */
+    .trust-banner {
+      background: #fff;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .trust-banner p {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+    .trust-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .trust-logo-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      color: #475569;
+    }
+    .trust-logo-item i { color: #6366f1; font-size: 1.2rem; }
+
+    /* ── CTA Banner ── */
+    .cta-section {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #312e81 100%);
+      padding: 72px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(99,102,241,.2), transparent 70%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .cta-section p {
+      color: #94a3b8;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: #fff;
+      color: #4f46e5;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 13px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.2); }
+    .btn-wa {
+      background: #22c55e;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: 13px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,197,94,.4); }
+
+    @media (max-width: 1024px) {
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar-grid { grid-template-columns: repeat(2, 1fr); }
+      .sbar-item:nth-child(2) { border-right: none; }
+      .sbar-item:nth-child(1), .sbar-item:nth-child(2) { border-bottom: 1px solid #f1f5f9; }
+    }
+    @media (max-width: 640px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- ── Hero ── -->
+  <section class="reviews-hero">
+    <div class="badge"><i class="fa-brands fa-google"></i> Google Verified Reviews</div>
+    <div class="hero-stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <h1>Client Reviews &amp; <span>Testimonials</span></h1>
+    <p>20,752+ Five Star Google Reviews from entrepreneurs across India who trust for the Catax Solutions Private Limitedir legal and compliance needs.</p>
+    <a href="contact.html" class="hero-cta"><i class="fa-solid fa-arrow-right"></i> Get Started Today</a>
+  </section>
+
+  <!-- ── Stats Bar ── -->
+  <section class="stats-bar">
+    <div class="stats-bar-grid">
+      <div class="sbar-item">
+        <div class="sbar-val">4.9<span>/5</span></div>
+        <div class="sbar-label">⭐ Google Rating</div>
+      </div>
+      <div class="sbar-item">
+        <div class="sbar-val">20,752<span>+</span></div>
+        <div class="sbar-label">Total Reviews</div>
+      </div>
+      <div class="sbar-item">
+        <div class="sbar-val">180,000<span>+</span></div>
+        <div class="sbar-label">Clients Served</div>
+      </div>
+      <div class="sbar-item">
+        <div class="sbar-val">16<span>+</span></div>
+        <div class="sbar-label">Years of Trust</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Reviews Grid ── -->
+  <section class="reviews-section">
+    <div class="reviews-header">
+      <div class="section-tag"><i class="fa-solid fa-quote-left"></i> What Our Clients Say</div>
+      <h2 class="section-title">Real Reviews from <span>Real Entrepreneurs</span></h2>
+      <p class="section-lead">Every review below is from a verified client who experienced our services first-hand. Their success is our greatest achievement.</p>
+    </div>
+
+    <div class="reviews-grid">
+
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-indigo">RK</div>
+            <div class="rc-meta">
+              <h4>Rahul Kapoor</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>New Delhi</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-building"></i> Private Limited Company</span>
+        <p class="review-text">Catax Solutions Private Limited made registering my Pvt Ltd company completely stress-free. Their team guided me through every document, handled all the MCA filings, and had my company incorporated in under 10 days. The communication was prompt and the expertise was evident. Highly recommend for any first-time founder!</p>
+        <div class="review-date">March 2024</div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-teal">PS</div>
+            <div class="rc-meta">
+              <h4>Priya Sharma</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>Mumbai, Maharashtra</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-trademark"></i> Trademark Registration</span>
+        <p class="review-text">Got my brand trademark registered through Catax Solutions Private Limited and I couldn't be more satisfied. The process was explained clearly, the CA was very knowledgeable, and the entire application was filed promptly. They even followed up on the status proactively. My brand is now legally protected — thank you catex Solutions private limited!</p>
+        <div class="review-date">January 2024</div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-amber">AM</div>
+            <div class="rc-meta">
+              <h4>Arjun Mehta</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>Bengaluru, Karnataka</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-file-invoice-dollar"></i> GST Registration</span>
+        <p class="review-text">I was struggling with GST registration for my e-commerce business and catex Solutions private limited resolved it within 2 days. Their GST team is incredibly efficient — they knew exactly which documents were needed and submitted everything correctly the first time. Will definitely use them for my annual returns too.</p>
+        <div class="review-date">February 2024</div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-rose">NJ</div>
+            <div class="rc-meta">
+              <h4>Neha Joshi</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>Pune, Maharashtra</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-handshake"></i> LLP Registration</span>
+        <p class="review-text">catex Solutions private limited helped me and my business partner register our LLP seamlessly. From drafting the LLP agreement to getting the Certificate of Incorporation, they managed everything professionally. The pricing was transparent with no surprise charges at the end. Very trustworthy service — 5 stars without hesitation!</p>
+        <div class="review-date">November 2023</div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-blue">VR</div>
+            <div class="rc-meta">
+              <h4>Vikram Reddy</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>Hyderabad, Telangana</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-chart-line"></i> Annual Compliance</span>
+        <p class="review-text">I've been using catex Solutions private limited for my company's annual ROC compliance and ITR filing for 3 years now. Their reminder system ensures I never miss a deadline and the CA team handles everything meticulously. It's like having a full-time compliance department at a fraction of the cost. Excellent value!</p>
+        <div class="review-date">December 2023</div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-green">SA</div>
+            <div class="rc-meta">
+              <h4>Sunita Agarwal</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>Jaipur, Rajasthan</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-store"></i> MSME Registration</span>
+        <p class="review-text">As a woman entrepreneur running a small boutique, I was overwhelmed by all the registrations needed. catex Solutions private limited handled my MSME Udyam registration, GST, and shop license in one go. My dedicated manager was patient, explained everything in simple terms, and was always available on WhatsApp. Truly amazing service!</p>
+        <div class="review-date">October 2023</div>
+      </div>
+
+      <!-- Review 7 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-purple">KP</div>
+            <div class="rc-meta">
+              <h4>Kiran Patel</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>Ahmedabad, Gujarat</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-copyright"></i> Copyright Registration</span>
+        <p class="review-text">I needed to protect my mobile app's source code and creative assets. catex Solutions private limited IP team handled the copyright registration efficiently and explained the scope of protection thoroughly. The entire process was digital, quick, and affordable. My intellectual property is now legally protected. Great work!</p>
+        <div class="review-date">September 2023</div>
+      </div>
+
+      <!-- Review 8 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-sky">MT</div>
+            <div class="rc-meta">
+              <h4>Manish Tiwari</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>Lucknow, UP</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-file-shield"></i> FSSAI License</span>
+        <p class="review-text">Opening a cloud kitchen and needed FSSAI registration urgently. catex Solutions private limited delivered in record time! They knew exactly which category of license I needed, prepared all documents correctly, and liaised with the FSSAI office. No delays, no hassle. I've already recommended them to 4 other friends in the F&amp;B industry.</p>
+        <div class="review-date">August 2023</div>
+      </div>
+
+      <!-- Review 9 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="rc-avatar av-pink">DR</div>
+            <div class="rc-meta">
+              <h4>Deepika Rao</h4>
+              <div class="rc-city"><i class="fa-solid fa-location-dot" style="font-size:.7rem;margin-right:3px;color:#94a3b8;"></i>Chennai, Tamil Nadu</div>
+            </div>
+          </div>
+          <div class="google-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google
+          </div>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <span class="review-service-tag"><i class="fa-solid fa-users"></i> OPC Registration</span>
+        <p class="review-text">As a solo entrepreneur, I wanted the protection of a company structure and catex Solutions private limited helped me set up a One Person Company perfectly. They explained the differences between OPC, sole proprietorship and Pvt Ltd clearly, and registered my OPC with all required docs in just one week. My go-to for all legal work hereafter!</p>
+        <div class="review-date">July 2023</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Trust Banner ── -->
+  <section class="trust-banner">
+    <p>Trusted by entrepreneurs across India · Verified Google Reviews · 16+ Years of Excellence</p>
+    <div class="trust-logos">
+      <div class="trust-logo-item"><i class="fa-solid fa-building"></i> Pvt Ltd &amp; LLP</div>
+      <div class="trust-logo-item"><i class="fa-solid fa-trademark"></i> Trademark &amp; IP</div>
+      <div class="trust-logo-item"><i class="fa-solid fa-file-invoice-dollar"></i> GST &amp; Tax</div>
+      <div class="trust-logo-item"><i class="fa-solid fa-scale-balanced"></i> Legal Compliance</div>
+      <div class="trust-logo-item"><i class="fa-solid fa-certificate"></i> Licenses &amp; Permits</div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ── -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Join 180,000+ Happy Business Owners</h2>
+      <p>Experience the catex Solutions private limited difference. Let our expert team handle your legal and compliance needs so you can focus on growing your business.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-white"><i class="fa-solid fa-arrow-right"></i> Get Free Consultation</a>
+        <a href="https://wa.me/911234567890" class="btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+</body>
+</html>

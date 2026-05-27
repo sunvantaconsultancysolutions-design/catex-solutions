@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use | Captex Company</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding-top: 72px;
+    }
+
+    /* Hero */
+    .terms-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1a1a2e 100%);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .terms-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 120%, rgba(245,158,11,.12), transparent);
+    }
+    .terms-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,158,11,.15);
+      border: 1px solid rgba(245,158,11,.3);
+      color: #fcd34d;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .terms-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 16px;
+    }
+    .terms-hero p {
+      color: #94a3b8;
+      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .terms-hero .last-updated {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Layout */
+    .terms-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .terms-wrapper { grid-template-columns: 1fr; }
+      .terms-sidebar { display: none; }
+    }
+
+    /* Sidebar */
+    .terms-sidebar {
+      position: sticky;
+      top: 90px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .terms-sidebar h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .terms-sidebar a {
+      display: block;
+      font-size: 0.85rem;
+      color: #475569;
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      margin-bottom: 2px;
+    }
+    .terms-sidebar a:hover { background: #f1f5f9; color: #0f172a; }
+
+    /* Sections */
+    .terms-section {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      scroll-margin-top: 90px;
+    }
+    .terms-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .terms-section h2 .icon-wrap {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .terms-section h2 .icon-wrap i { color: #d97706; font-size: 0.9rem; }
+
+    .terms-section p {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .terms-section p:last-child { margin-bottom: 0; }
+    .terms-section p strong { color: #0f172a; }
+
+    .terms-section ul, .terms-section ol {
+      margin: 10px 0 12px;
+      padding-left: 0;
+      list-style: none;
+    }
+    .terms-section ul li, .terms-section ol li {
+      color: #475569;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      padding: 5px 0 5px 26px;
+      position: relative;
+    }
+    .terms-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 14px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #f59e0b;
+    }
+    .terms-section ol { counter-reset: ol-c; }
+    .terms-section ol li { counter-increment: ol-c; }
+    .terms-section ol li::before {
+      content: counter(ol-c) '.';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      font-weight: 700;
+      color: #f59e0b;
+      font-size: 0.85rem;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-left: 4px solid #f59e0b;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 14px;
+    }
+    .highlight-box p { font-size: 0.9rem; color: #78350f; margin: 0; }
+
+    /* Contact block */
+    .contact-block {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: 14px;
+      padding: 36px;
+      text-align: center;
+    }
+    .contact-block h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      color: #f8fafc;
+      margin-bottom: 8px;
+    }
+    .contact-block p { color: #94a3b8; font-size: 0.93rem; margin-bottom: 20px; }
+    .contact-block a.btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f59e0b;
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 26px;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background .2s, transform .15s;
+    }
+    .contact-block a.btn:hover { background: #d97706; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="terms-hero">
+    <div class="badge"><i class="fa-solid fa-file-contract"></i> Legal Agreement</div>
+    <h1>Terms of Use</h1>
+    <p>By accessing or using Captex Company's website and services, you agree to be bound by these Terms of Use. Please read them carefully.</p>
+    <div class="last-updated"><i class="fa-regular fa-calendar"></i> Last Updated: May 2024</div>
+  </section>
+
+  <!-- Content -->
+  <div class="terms-wrapper">
+
+    <!-- Sidebar TOC -->
+    <aside class="terms-sidebar">
+      <h4>Contents</h4>
+      <a href="#acceptance">1. Acceptance of Terms</a>
+      <a href="#services">2. Services Description</a>
+      <a href="#obligations">3. User Obligations</a>
+      <a href="#payment">4. Payment Terms</a>
+      <a href="#cancellation">5. Cancellation & Refund</a>
+      <a href="#ip">6. Intellectual Property</a>
+      <a href="#liability">7. Limitation of Liability</a>
+      <a href="#law">8. Governing Law</a>
+      <a href="#contact">9. Contact Information</a>
+    </aside>
+
+    <!-- Sections -->
+    <main>
+
+      <!-- 1 -->
+      <div class="terms-section" id="acceptance">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-check-double"></i></span> 1. Acceptance of Terms</h2>
+        <p>By accessing the website at <strong>www.captexcompany.com</strong>, placing an order, or using any service offered by Captex Company, you confirm that you have read, understood, and agree to be bound by these Terms of Use ("Terms") and our Privacy Policy.</p>
+        <p>If you do not agree with any part of these Terms, you must discontinue use of this website and our services immediately. These Terms apply to all visitors, users, and clients of Captex Company.</p>
+        <p>Captex Company reserves the right to modify these Terms at any time. Continued use of the website or services after such modifications constitutes your acceptance of the revised Terms.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="terms-section" id="services">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-briefcase"></i></span> 2. Services Description</h2>
+        <p>Captex Company provides business facilitation, documentation assistance, and compliance support services including but not limited to:</p>
+        <ul>
+          <li>Company registration, LLP registration, and partnership firm formation.</li>
+          <li>GST registration, filing, and compliance support.</li>
+          <li>Trademark filing and intellectual property documentation.</li>
+          <li>FSSAI, MSME, Import-Export Code, and other government registrations.</li>
+          <li>ROC compliance, annual filings, and corporate secretarial support.</li>
+          <li>Legal document drafting and business consultation services.</li>
+        </ul>
+        <p>All services are facilitation-based. Captex Company is not a law firm and does not provide legal representation, opinions, or advice.</p>
+      </div>
+
+      <!-- 3 -->
+      <div class="terms-section" id="obligations">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-user-check"></i></span> 3. User Obligations</h2>
+        <p>As a user or client of Captex Company, you agree to:</p>
+        <ul>
+          <li>Provide accurate, complete, and truthful information required for service delivery.</li>
+          <li>Promptly respond to requests for additional documents or clarifications.</li>
+          <li>Not use our services for any fraudulent, illegal, or unlawful purpose.</li>
+          <li>Not misrepresent your identity or provide forged documents.</li>
+          <li>Understand that you bear full responsibility for the correctness of information submitted.</li>
+          <li>Not engage in any activity that disrupts or interferes with the website's normal functioning.</li>
+          <li>Comply with all applicable laws and regulations of India.</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>Important:</strong> Captex Company shall not be liable for delays or rejections caused by inaccurate, incomplete, or fraudulent information provided by the client.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="terms-section" id="payment">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-indian-rupee-sign"></i></span> 4. Payment Terms</h2>
+        <p>All service fees are payable as specified at the time of order placement. The following terms apply:</p>
+        <ul>
+          <li>Fees displayed on the website are professional service fees only and exclude applicable government charges, stamp duties, and statutory fees.</li>
+          <li>All payments must be made in Indian Rupees (INR) unless otherwise specified.</li>
+          <li>Payment is due upfront before commencement of services unless a specific arrangement has been agreed upon in writing.</li>
+          <li>Government fees, once paid on your behalf, are non-refundable and will be communicated transparently before payment.</li>
+          <li>Invoices/receipts will be issued for all payments made to Captex Company.</li>
+          <li>GST as applicable will be charged on all service fees as per prevailing Government rates.</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div class="terms-section" id="cancellation">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-rotate-left"></i></span> 5. Cancellation &amp; Refund</h2>
+        <p>Captex Company maintains a fair cancellation and refund policy. Refunds are processed based on the stage of service at the time of cancellation. Please refer to our detailed <a href="refund.html" style="color:#f59e0b;font-weight:600;">Refund Policy</a> for complete details including the refund schedule and process.</p>
+        <ul>
+          <li>Cancellation requests must be submitted in writing via email.</li>
+          <li>Refunds will be processed within 7–10 business days of approval.</li>
+          <li>Government fees paid on behalf of clients are strictly non-refundable.</li>
+          <li>Captex Company reserves the right to deduct reasonable administrative costs from refunds.</li>
+        </ul>
+      </div>
+
+      <!-- 6 -->
+      <div class="terms-section" id="ip">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-copyright"></i></span> 6. Intellectual Property</h2>
+        <p>All content on the Captex Company website — including but not limited to text, graphics, logos, icons, images, audio clips, and software — is the exclusive property of Captex Company and is protected by applicable copyright, trademark, and intellectual property laws.</p>
+        <ul>
+          <li>You may not reproduce, distribute, modify, or create derivative works without prior written consent from Captex Company.</li>
+          <li>Unauthorized use of our brand name, logo, or content may result in legal action.</li>
+          <li>You are granted a limited, non-exclusive, non-transferable license to access and use the website for personal, non-commercial purposes only.</li>
+          <li>All trademarks, service marks, and trade names are the property of their respective owners.</li>
+        </ul>
+      </div>
+
+      <!-- 7 -->
+      <div class="terms-section" id="liability">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-scale-balanced"></i></span> 7. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, Captex Company, its directors, employees, partners, and affiliates shall not be liable for:</p>
+        <ul>
+          <li>Any indirect, incidental, special, consequential, or punitive damages arising from the use of our services or website.</li>
+          <li>Loss of profits, data, business opportunities, or goodwill.</li>
+          <li>Rejection of applications, registrations, or filings by government authorities.</li>
+          <li>Delays caused by government processing, technical failures, or force majeure events.</li>
+          <li>Errors, omissions, or inaccuracies in information provided by the client.</li>
+        </ul>
+        <p>In all cases, Captex Company's maximum liability shall be limited to the amount paid by the client for the specific service in question.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="terms-section" id="law">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-gavel"></i></span> 8. Governing Law &amp; Jurisdiction</h2>
+        <p>These Terms of Use and all disputes arising out of or in connection with these Terms shall be governed by and construed in accordance with the laws of <strong>India</strong>, without regard to its conflict of law provisions.</p>
+        <p>Any disputes, claims, or controversies arising out of or related to these Terms, our services, or the use of this website shall be subject to the <strong>exclusive jurisdiction of the courts in New Delhi, India</strong>.</p>
+        <p>By using our services, you hereby consent to the personal jurisdiction and venue of such courts and waive any objection to the exercise of jurisdiction over you by such courts.</p>
+      </div>
+
+      <!-- 9 -->
+      <div class="terms-section" id="contact" style="margin-bottom:0;">
+        <h2><span class="icon-wrap"><i class="fa-solid fa-envelope"></i></span> 9. Contact Information</h2>
+        <p>For questions, concerns, or disputes regarding these Terms of Use, please contact:</p>
+        <ul>
+          <li><strong>Email:</strong> legal@captexcompany.com</li>
+          <li><strong>General Inquiries:</strong> info@captexcompany.com</li>
+          <li><strong>Website:</strong> www.captexcompany.com</li>
+          <li><strong>Address:</strong> Captex Company, New Delhi – 110001, India</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:24px;">
+        <div class="contact-block">
+          <h3>Need Legal Clarification?</h3>
+          <p>Our team can help clarify any aspect of these terms before you engage our services.</p>
+          <a href="mailto:legal@captexcompany.com" class="btn"><i class="fa-solid fa-envelope"></i> legal@captexcompany.com</a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+</body>
+</html>

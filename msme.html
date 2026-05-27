@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSME / Udyam Registration | Catex Private Limited</title>
+  <meta name="description" content="Register your business as MSME under the Udyam portal. Get government benefits, subsidies, and priority lending." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="style.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding-top: 72px;
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+      color: #fff;
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(180,83,9,0.18) 0%, transparent 60%),
+                  radial-gradient(ellipse at 75% 20%, rgba(180,83,9,0.12) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .page-hero .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(180,83,9,0.18);
+      border: 1px solid rgba(180,83,9,0.45);
+      color: #fcd34d;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .4px;
+      margin-bottom: 20px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 560px;
+      margin: 0 auto 28px;
+      line-height: 1.65;
+    }
+    .hero-price {
+      display: inline-block;
+      background: linear-gradient(135deg, #B45309, #d97706);
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 999px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(180,83,9,0.4);
+    }
+    .hero-price span { font-size: .9rem; opacity: .85; font-weight: 500; }
+
+    /* ── Section Wrapper ── */
+    .section { padding: 64px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      text-align: center;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      text-align: center;
+      color: #64748b;
+      font-size: 1rem;
+      margin-bottom: 48px;
+    }
+
+    /* ── Form Card ── */
+    .form-section { background: #fff; }
+    .form-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 44px 40px;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+    }
+    .form-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .form-card .form-lead {
+      color: #64748b;
+      font-size: .95rem;
+      margin-bottom: 28px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 18px; }
+    .form-group label {
+      font-size: .85rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: .95rem;
+      font-family: inherit;
+      color: #1e293b;
+      background: #f9fafb;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #B45309;
+      box-shadow: 0 0 0 3px rgba(180,83,9,0.12);
+      background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #B45309, #d97706);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+      margin-top: 6px;
+    }
+    .btn-submit:hover { opacity: .92; transform: translateY(-1px); }
+
+    /* ── Features Grid ── */
+    .features-section { background: #f1f5f9; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .feature-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(180,83,9,0.1);
+      color: #B45309;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+    .feature-card p { font-size: .88rem; color: #64748b; line-height: 1.5; }
+
+    /* ── Steps ── */
+    .steps-section { background: #fff; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      padding-top: 20px;
+    }
+    .step-card {
+      text-align: center;
+      padding: 36px 20px 28px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+    .step-num {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #B45309, #d97706);
+      color: #fff;
+      font-weight: 800;
+      font-size: .95rem;
+      line-height: 36px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(180,83,9,0.35);
+    }
+    .step-card h3 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-top: 10px; }
+
+    /* ── FAQ ── */
+    .faq-section { background: #f1f5f9; }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 28px 32px;
+    }
+    .faq-item:first-child { border-top: 1px solid #e2e8f0; border-radius: 14px 14px 0 0; }
+    .faq-item:last-child { border-radius: 0 0 14px 14px; }
+    .faq-number-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .faq-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #B45309;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .faq-q-text {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+      padding-top: 4px;
+    }
+    .faq-answer-text {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.75;
+      padding-left: 48px;
+    }
+
+    /* ── CTA Banner ── */
+    .cta-section {
+      background: linear-gradient(135deg, #B45309, #d97706);
+      color: #fff;
+      text-align: center;
+      padding: 72px 24px;
+    }
+    .cta-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 14px; }
+    .cta-section p { font-size: 1.05rem; opacity: .88; margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .btn-cta {
+      display: inline-block;
+      background: #fff;
+      color: #B45309;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="hero-tag">
+      <i class="fas fa-industry"></i> Government Scheme
+    </div>
+    <h1>MSME / Udyam Registration</h1>
+    <p>Unlock government benefits, subsidies, and easy credit for your MSME</p>
+    <div class="hero-price">Starting at ₹999 <span>/ registration</span></div>
+  </section>
+
+  <!-- Form -->
+  <section class="section form-section">
+    <div class="section-inner">
+      <div class="form-card">
+        <h2>Get Started with Udyam Registration</h2>
+        <p class="form-lead">Fill in your details and our experts will reach out within 24 hours.</p>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="msme-name">Full Name (Proprietor / Director)</label>
+              <input type="text" id="msme-name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="msme-phone">Phone Number</label>
+              <input type="tel" id="msme-phone" placeholder="+91 98765 43210" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="msme-email">Email Address</label>
+            <input type="email" id="msme-email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="msme-biz">Business / Enterprise Name</label>
+              <input type="text" id="msme-biz" placeholder="Your enterprise name" required />
+            </div>
+            <div class="form-group">
+              <label for="msme-entity">Entity Type</label>
+              <select id="msme-entity">
+                <option value="">Select entity</option>
+                <option>Proprietorship</option>
+                <option>Partnership Firm</option>
+                <option>Private Limited Company</option>
+                <option>LLP</option>
+                <option>Hindu Undivided Family (HUF)</option>
+                <option>Co-operative Society</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="msme-category">Expected MSME Category</label>
+              <select id="msme-category">
+                <option value="">Select category</option>
+                <option>Micro (Invest ≤₹1 Cr, Turnover ≤₹5 Cr)</option>
+                <option>Small (Invest ≤₹10 Cr, Turnover ≤₹50 Cr)</option>
+                <option>Medium (Invest ≤₹50 Cr, Turnover ≤₹250 Cr)</option>
+                <option>Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="msme-aadhaar">Aadhaar Number (Last 4 digits)</label>
+              <input type="text" id="msme-aadhaar" placeholder="XXXX" maxlength="4" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="msme-activity">Nature of Business Activity</label>
+            <select id="msme-activity">
+              <option value="">Select activity</option>
+              <option>Manufacturing</option>
+              <option>Services</option>
+              <option>Trading</option>
+              <option>Mixed (Manufacturing + Services)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="msme-message">Additional Details</label>
+            <textarea id="msme-message" placeholder="Describe your products/services, existing GST number (if any)..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane" style="margin-right:8px;"></i>Submit Application Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section features-section">
+    <div class="section-inner">
+      <h2 class="section-title">What's Included</h2>
+      <p class="section-sub">Comprehensive benefits through Udyam Registration</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-award"></i></div>
+          <div>
+            <h3>Udyam Registration Certificate</h3>
+            <p>Official Udyam Certificate with a unique registration number issued by the GOI.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-industry"></i></div>
+          <div>
+            <h3>MSME Classification Certificate</h3>
+            <p>Micro, Small, or Medium classification based on investment and turnover.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-building-columns"></i></div>
+          <div>
+            <h3>Priority Sector Lending Benefits</h3>
+            <p>Access to bank loans at preferential rates under priority sector lending norms.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-gavel"></i></div>
+          <div>
+            <h3>Government Tender Priority</h3>
+            <p>Special preference and exemptions in government procurement and tenders.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <div>
+            <h3>Collateral-Free Loan Access</h3>
+            <p>Access the CGTSME scheme for collateral-free credit up to ₹2 Crore.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+          <div>
+            <h3>Subsidy on Patent Filing</h3>
+            <p>50% rebate on patent filing fee for MSME registered enterprises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section steps-section">
+    <div class="section-inner">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Simple, transparent process from start to finish</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <i class="fas fa-clipboard-list" style="font-size:2rem;color:#B45309;"></i>
+          <h3>Fill the Form</h3>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <i class="fas fa-fingerprint" style="font-size:2rem;color:#B45309;"></i>
+          <h3>Aadhaar Verification</h3>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <i class="fas fa-file-pen" style="font-size:2rem;color:#B45309;"></i>
+          <h3>Business Details Filing</h3>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <i class="fas fa-award" style="font-size:2rem;color:#B45309;"></i>
+          <h3>Get Udyam Certificate</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="section-inner">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you need to know about Udyam / MSME registration</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">1</div>
+            <div class="faq-q-text">Who is eligible for Udyam Registration?</div>
+          </div>
+          <div class="faq-answer-text">Micro: Investment ≤₹1 Cr &amp; Turnover ≤₹5 Cr. Small: Investment ≤₹10 Cr &amp; Turnover ≤₹50 Cr. Medium: Investment ≤₹50 Cr &amp; Turnover ≤₹250 Cr.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">2</div>
+            <div class="faq-q-text">What are the benefits of Udyam Registration?</div>
+          </div>
+          <div class="faq-answer-text">Priority lending from banks, government subsidies, protection against delayed payments under MSMED Act, preference in government tenders, concession on electricity bills, and more.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">3</div>
+            <div class="faq-q-text">Is Udyam Registration free?</div>
+          </div>
+          <div class="faq-answer-text">Registration on the Udyam portal is free of government fee. However, professional assistance for error-free filing is recommended.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">4</div>
+            <div class="faq-q-text">How long is Udyam Registration valid?</div>
+          </div>
+          <div class="faq-answer-text">Udyam Registration is valid for a lifetime unless cancelled. However, the classification may change if turnover or investment crosses the threshold.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-number-heading">
+            <div class="faq-num">5</div>
+            <div class="faq-q-text">What documents are needed?</div>
+          </div>
+          <div class="faq-answer-text">Aadhaar card of the proprietor/director/partner, PAN card, GST number (if applicable), and bank account details are required.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Register Your MSME Today</h2>
+    <p>Unlock government benefits, subsidies, and priority credit. Let our experts handle the Udyam registration for you.</p>
+    <a href="#" class="btn-cta"><i class="fas fa-industry" style="margin-right:8px;"></i>Start Udyam Registration Now</a>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>

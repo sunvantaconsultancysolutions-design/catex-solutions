@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Captex Company</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding-top: 72px;
+    }
+
+    /* Hero */
+    .pp-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #162032 100%);
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 130%, rgba(16,185,129,.13), transparent);
+    }
+    .pp-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16,185,129,.15);
+      border: 1px solid rgba(16,185,129,.3);
+      color: #6ee7b7;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .pp-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 16px;
+    }
+    .pp-hero p {
+      color: #94a3b8;
+      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .pp-hero .last-updated {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Layout */
+    .pp-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .pp-wrapper { grid-template-columns: 1fr; }
+      .pp-sidebar { display: none; }
+    }
+
+    /* Sidebar TOC */
+    .pp-sidebar {
+      position: sticky;
+      top: 90px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .pp-sidebar h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .pp-sidebar a {
+      display: block;
+      font-size: 0.85rem;
+      color: #475569;
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      margin-bottom: 2px;
+    }
+    .pp-sidebar a:hover { background: #f1f5f9; color: #0f172a; }
+
+    /* Sections */
+    .pp-section {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      scroll-margin-top: 90px;
+    }
+
+    .pp-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .pp-section h2 .icon-wrap {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pp-section h2 .icon-wrap i { color: #059669; font-size: 0.9rem; }
+
+    .pp-section p {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .pp-section p:last-child { margin-bottom: 0; }
+
+    .pp-section ul, .pp-section ol {
+      margin: 10px 0 12px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .pp-section ul li, .pp-section ol li {
+      color: #475569;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      padding: 5px 0 5px 26px;
+      position: relative;
+    }
+    .pp-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 14px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+    .pp-section ol { counter-reset: ol-counter; }
+    .pp-section ol li { counter-increment: ol-counter; }
+    .pp-section ol li::before {
+      content: counter(ol-counter) '.';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      font-weight: 700;
+      color: #10b981;
+      font-size: 0.85rem;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.9rem;
+    }
+    .data-table th {
+      background: #f1fdf9;
+      color: #065f46;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 2px solid #a7f3d0;
+    }
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #475569;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* Contact block */
+    .contact-block {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: 14px;
+      padding: 36px;
+      text-align: center;
+    }
+    .contact-block h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      color: #f8fafc;
+      margin-bottom: 8px;
+    }
+    .contact-block p { color: #94a3b8; font-size: 0.93rem; margin-bottom: 20px; }
+    .contact-block a.btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #10b981;
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 26px;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background .2s, transform .15s;
+    }
+    .contact-block a.btn:hover { background: #059669; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="pp-hero">
+    <div class="badge"><i class="fa-solid fa-lock"></i> Privacy &amp; Data Protection</div>
+    <h1>Privacy Policy</h1>
+    <p>We value your privacy. This policy explains how Captex Company collects, uses, and protects your personal information.</p>
+    <div class="last-updated"><i class="fa-regular fa-calendar"></i> Last Updated: May 2024</div>
+  </section>
+
+  <!-- Content -->
+  <div class="pp-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="pp-sidebar">
+      <h4>On This Page</h4>
+      <a href="#collect">1. Information We Collect</a>
+      <a href="#use">2. How We Use Your Info</a>
+      <a href="#sharing">3. Information Sharing</a>
+      <a href="#cookies">4. Cookies Policy</a>
+      <a href="#security">5. Data Security</a>
+      <a href="#rights">6. Your Rights</a>
+      <a href="#third-party">7. Third-Party Links</a>
+      <a href="#changes">8. Policy Changes</a>
+      <a href="#contact">9. Contact Us</a>
+    </aside>
+
+    <!-- Sections -->
+    <main>
+
+      <!-- 1 -->
+      <div class="pp-section" id="collect">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-database"></i></span>
+          1. Information We Collect
+        </h2>
+        <p>When you interact with our website or use our services, we may collect the following categories of information:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>Examples</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Personal Identifiers</strong></td><td>Name, email address, phone number</td><td>Communication, service delivery</td></tr>
+            <tr><td><strong>Business Information</strong></td><td>Company name, PAN, GST number</td><td>Compliance processing</td></tr>
+            <tr><td><strong>Financial Information</strong></td><td>Payment method (no card details stored)</td><td>Billing & invoicing</td></tr>
+            <tr><td><strong>Usage Data</strong></td><td>IP address, browser type, pages visited, time spent</td><td>Analytics & improvement</td></tr>
+            <tr><td><strong>Communication Data</strong></td><td>Messages, support queries, feedback</td><td>Customer support</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 2 -->
+      <div class="pp-section" id="use">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-gear"></i></span>
+          2. How We Use Your Information
+        </h2>
+        <p>We use collected information for the following purposes:</p>
+        <ul>
+          <li>To provide, process, and deliver the services you have requested or purchased.</li>
+          <li>To communicate with you about your orders, service status, and updates.</li>
+          <li>To send transactional emails, invoices, and service-related notifications.</li>
+          <li>To respond to your inquiries and provide customer support.</li>
+          <li>To improve our website, services, and user experience based on analytics.</li>
+          <li>To comply with applicable laws, regulations, and legal obligations.</li>
+          <li>To detect, prevent, and address fraud or security issues.</li>
+          <li>To send periodic marketing communications (with your consent; you may opt out at any time).</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="pp-section" id="sharing">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-share-nodes"></i></span>
+          3. Information Sharing
+        </h2>
+        <p><strong>We do not sell, rent, or trade your personal information to any third party for commercial purposes.</strong></p>
+        <p>We may share your information only in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Service Delivery:</strong> With government portals and authorities as required to process your registrations or filings.</li>
+          <li><strong>Service Providers:</strong> With trusted third-party vendors (e.g., payment processors, email services) who assist us in operating our business and are bound by confidentiality obligations.</li>
+          <li><strong>Legal Compliance:</strong> When required by law, court order, or government request.</li>
+          <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred. We will notify you of such changes.</li>
+        </ul>
+      </div>
+
+      <!-- 4 -->
+      <div class="pp-section" id="cookies">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-cookie-bite"></i></span>
+          4. Cookies Policy
+        </h2>
+        <p>Our website uses cookies and similar tracking technologies to enhance your browsing experience. Cookies are small text files placed on your device by your browser.</p>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Required for the website to function properly. These cannot be disabled.</li>
+          <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website (e.g., Google Analytics).</li>
+          <li><strong>Preference Cookies:</strong> Remember your settings and preferences for a better experience.</li>
+          <li><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements (only with your consent).</li>
+        </ul>
+        <p>You can manage or disable cookies through your browser settings. Note that disabling certain cookies may affect the functionality of the website.</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="pp-section" id="security">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-shield-halved"></i></span>
+          5. Data Security
+        </h2>
+        <p>We implement appropriate technical and organizational security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. Our measures include:</p>
+        <ul>
+          <li>SSL/TLS encryption for all data transmitted between your browser and our servers.</li>
+          <li>Secure storage of data with access restricted to authorized personnel only.</li>
+          <li>Regular security audits and vulnerability assessments.</li>
+          <li>Staff training on data protection practices and confidentiality obligations.</li>
+        </ul>
+        <p>However, no method of transmission over the internet is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee absolute security.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="pp-section" id="rights">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-user-shield"></i></span>
+          6. Your Rights
+        </h2>
+        <p>You have the following rights concerning your personal data:</p>
+        <ul>
+          <li><strong>Right to Access:</strong> Request a copy of the personal information we hold about you.</li>
+          <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete information.</li>
+          <li><strong>Right to Deletion:</strong> Request deletion of your personal data, subject to legal obligations.</li>
+          <li><strong>Right to Withdraw Consent:</strong> Withdraw consent for marketing communications at any time.</li>
+          <li><strong>Right to Object:</strong> Object to processing of your personal data for certain purposes.</li>
+          <li><strong>Right to Portability:</strong> Request transfer of your data in a structured, machine-readable format.</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@captexcompany.com" style="color:#10b981;font-weight:600;">privacy@captexcompany.com</a>. We will respond within 30 days.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="pp-section" id="third-party">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          7. Third-Party Links
+        </h2>
+        <p>Our website may contain links to third-party websites for your convenience or reference. These external sites are not operated by Captex Company, and we have no control over their content or privacy practices.</p>
+        <p>We strongly encourage you to review the privacy policies of any third-party sites you visit. Captex Company is not responsible for the privacy practices or content of any linked third-party websites.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="pp-section" id="changes">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-rotate"></i></span>
+          8. Changes to This Policy
+        </h2>
+        <p>Captex Company reserves the right to update or modify this Privacy Policy at any time. When we make changes, we will:</p>
+        <ul>
+          <li>Update the "Last Updated" date at the top of this page.</li>
+          <li>Notify users of material changes via email or a prominent notice on our website.</li>
+          <li>Where required by law, seek your consent for significant changes in data processing.</li>
+        </ul>
+        <p>We encourage you to review this policy periodically. Your continued use of our website after changes are posted constitutes your acceptance of the updated policy.</p>
+      </div>
+
+      <!-- 9 -->
+      <div class="pp-section" id="contact" style="margin-bottom:0;">
+        <h2>
+          <span class="icon-wrap"><i class="fa-solid fa-envelope"></i></span>
+          9. Contact Us
+        </h2>
+        <p>If you have questions, concerns, or requests regarding this Privacy Policy or how your personal data is handled, please reach out:</p>
+        <ul>
+          <li><strong>Email:</strong> privacy@captexcompany.com</li>
+          <li><strong>Website:</strong> www.captexcompany.com</li>
+          <li><strong>Address:</strong> Captex Company, New Delhi, India</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:24px;">
+        <div class="contact-block">
+          <h3>Questions About Your Privacy?</h3>
+          <p>Our team is committed to addressing your privacy concerns promptly and transparently.</p>
+          <a href="mailto:privacy@captexcompany.com" class="btn"><i class="fa-solid fa-envelope"></i> privacy@captexcompany.com</a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+</body>
+</html>
