@@ -235,13 +235,13 @@ input, textarea, select {
 }
 
 .nav-container {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 24px;
-  height: 72px;
+  padding: 0 16px;
+  height: 68px;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 12px;
 }
 
 .nav-logo {
@@ -265,7 +265,7 @@ input, textarea, select {
 
 .logo-text {
   font-family: var(--font-primary);
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 800;
   color: var(--dark);
   letter-spacing: -0.5px;
@@ -278,7 +278,7 @@ input, textarea, select {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0px;
   flex: 1;
 }
 
@@ -289,9 +289,9 @@ input, textarea, select {
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  font-size: 14px;
+  gap: 4px;
+  padding: 6px 9px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--gray-700);
   border-radius: var(--radius-sm);
